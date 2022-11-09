@@ -15,6 +15,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -27,9 +33,38 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-flow: column nowrap;
   min-width: 320px;
   min-height: 100vh;
+}
+
+#root {
+  /* react root div */
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.dash-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 1rem;
+  outline: 2px solid red;
+}
+
+.dash-container {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.dash-footer {
+  position: sticky;
+  display: flex;
+  flex-flow: row nowrap;
+  bottom: 0;
+  padding: 1rem;
+  outline: 2px solid red;
 }
 
 h1 {
