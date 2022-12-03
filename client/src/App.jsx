@@ -9,11 +9,13 @@ import NewUserForm from './features/users/NewUserForm'
 import NotesList from './features/notes/NotesList'
 import NewNote from './features/notes/NewNote'
 import EditNote from './features/notes/EditNote'
+import EditExercise from './features/exercises/EditExercise'
 import UsersList from './features/users/UserList'
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/persistLogin'
 import RequireAuth from './features/auth/RequireAuth'
 import { ROLES } from './config/roles'
+import ExercisesList from './features/exercises/ExerciseList'
 
 
 function App() {
@@ -26,6 +28,12 @@ function App() {
       {/* Public routes   */}
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
+
+        <Route path="exercises">
+              <Route index element={<ExercisesList />} />
+              <Route path=":id" element={<EditExercise />} />
+              {/* <Route path="new-note" element={<NewNote />} /> */}
+            </Route>
 
 
       {/* Protected routes  */}
@@ -51,6 +59,9 @@ function App() {
               <Route path=":id" element={<EditNote />} />
               <Route path="new-note" element={<NewNote />} />
             </Route>
+
+
+
 
           </Route>
         </Route>
