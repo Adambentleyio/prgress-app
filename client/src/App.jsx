@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './layout/Layout'
-import Public from './routes/Public'
-import Login from './features/auth/Login'
+import LandingPage from './routes/LandingPage'
+import LoginPage from './features/auth/LoginPage'
 import DashboardLayout from './layout/DashboardLayout'
 import Welcome from './components/Welcome'
 import EditUser from './features/users/EditUser'
 import NewUserForm from './features/users/NewUserForm'
+import SignUpForm from './features/users/SignUpForm'
 import NotesList from './features/notes/NotesList'
 import NewNote from './features/notes/NewNote'
 import EditNote from './features/notes/EditNote'
@@ -26,8 +27,9 @@ function App() {
      <Routes>
       <Route path="/" element={<Layout />}>
       {/* Public routes   */}
-        <Route index element={<Public />} />
-        <Route path="login" element={<Login />} />
+        <Route index element={<LandingPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="signup" element={<SignUpForm />} />
 
         <Route path="exercises">
               <Route index element={<ExercisesList />} />
@@ -68,6 +70,8 @@ function App() {
       </Route>
       </Route>
       </Route>
+      {/* Catch all route */}
+      <Route path="*" element={<LandingPage />} />
      </Routes>
     </>
   )

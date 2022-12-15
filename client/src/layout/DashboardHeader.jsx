@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 
 
-const DashboardHeader = () => {
+export default function DashboardHeader() {
 
   const [sendLogout, {
     isLoading,
@@ -17,14 +17,14 @@ const DashboardHeader = () => {
     err
   }] = useSendLogoutMutation()
 
+    // check isSuccess and when TRUE navigate to '/'
+    useEffect(() => {
+      if (isSuccess) Navigate('/')
+    }, [isSuccess, Navigate])
+
+
   const token = useSelector(state => state.auth.token)
   console.log(token)
-
-
-  // check isSuccess and when TRUE navigate to '/'
-  useEffect(() => {
-    if (isSuccess) Navigate('/')
-  }, [isSuccess, Navigate])
 
   // early returns as soon as isLoading or isError occurs
 
@@ -43,20 +43,47 @@ const DashboardHeader = () => {
     </button>
   )
 
+    const navigation = [
+  { name: 'Solutions', href: '#' },
+  { name: 'Pricing', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Company', href: '#' },
+]
+
+
   return (
     <>
-    <header className='dash-header'>
-      <div className="dash-header__container">
-         <Link to="/dash"><h1>PRGRESS</h1></Link>
-         <nav className='dash-header__nav'>
-          {logoutButton}
-          {loginButton}
-         </nav>
-      </div>
-
+    <header className="bg-indigo-600">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
+          <div className="flex items-center">
+            <a href="#">
+              <span className="sr-only">Your Company</span>
+              <img className="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
+            </a>
+            <div className="ml-10 hidden space-x-8 lg:block">
+              {navigation.map((link) => (
+                <a key={link.name} href={link.href} className="text-base font-medium text-white hover:text-indigo-50">
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="ml-10 space-x-4">
+            {!token && loginButton}
+            {logoutButton}
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
+          {navigation.map((link) => (
+            <a key={link.name} href={link.href} className="text-base font-medium text-white hover:text-indigo-50">
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </nav>
     </header>
     </>
+
   )
 }
-
-export default DashboardHeader
