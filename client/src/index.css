@@ -152,11 +152,11 @@ button:focus-visible {
 
 /* || TABLES - GENERAL */
 
-thead,
+/* thead,
 tbody,
 tr {
   display: contents;
-}
+} */
 
 /* .note__created,
 .note__updated,

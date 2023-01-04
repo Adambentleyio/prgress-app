@@ -16,7 +16,8 @@ import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/persistLogin'
 import RequireAuth from './features/auth/RequireAuth'
 import { ROLES } from './config/roles'
-import ExercisesList from './features/exercises/ExerciseList'
+import ExerciseList from './features/exercises/ExerciseList'
+import NewExercise from './features/exercises/NewExercise'
 
 
 function App() {
@@ -31,12 +32,6 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignUpForm />} />
 
-        <Route path="exercises">
-              <Route index element={<ExercisesList />} />
-              <Route path=":id" element={<EditExercise />} />
-              {/* <Route path="new-note" element={<NewNote />} /> */}
-            </Route>
-
 
       {/* Protected routes  */}
 
@@ -48,8 +43,15 @@ function App() {
 
             <Route index element={<Welcome />}/>
 
+            <Route path="exercises">
+              <Route index element={<ExerciseList />} />
+              <Route path=":id" element={<EditExercise />} />
+              <Route path="new-exercise" element={<NewExercise />} />
+            </Route>
+
             <Route element={<RequireAuth allowedRoles={[ROLES.Admin, ROLES.Manager]} />}>
-              <Route path="users">
+
+             <Route path="users">
                 <Route index element={<UsersList />} />
                 <Route path=":id" element={<EditUser />} />
                 <Route path="new-user" element={<NewUserForm />} />
@@ -61,9 +63,6 @@ function App() {
               <Route path=":id" element={<EditNote />} />
               <Route path="new-note" element={<NewNote />} />
             </Route>
-
-
-
 
           </Route>
         </Route>

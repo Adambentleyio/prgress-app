@@ -62,7 +62,7 @@ const Login = () => {
       setPersist(prev => !prev)
     }
 
-    const errClass = errmsg ? "errmsg" : "offscreen" // a variable to inject CSS classes on input
+    const errClass = errmsg ? "errMsg" : "offscreen" // a variable to inject CSS classes on input
 
     if (isLoading) return <p>... is loading</p>
 
@@ -73,7 +73,7 @@ const Login = () => {
         </header>
         <main className="login">
         <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-        {isError && <p className="successmsg">Uh-oh. Something went wrong <a href="/login">Login here</a></p>}
+        {isError && <p className="successmsg">Uh-oh. Something went wrong</p>}
         <p className={errClass}>{error?.data?.message}</p>
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -149,7 +149,7 @@ const Login = () => {
                   type="submit"
                   className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                  Sign up
+                  Log in
                 </button>
               </div>
             </form>

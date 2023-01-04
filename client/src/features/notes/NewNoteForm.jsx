@@ -6,7 +6,6 @@ import { faSave } from "@fortawesome/free-solid-svg-icons"
 
 const NewNoteForm = ({ users }) => {
 
-
     const [addNewNote, {
         isLoading,
         isSuccess,

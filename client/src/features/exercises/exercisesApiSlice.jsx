@@ -21,6 +21,8 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
             transformResponse: responseData => {
                 const loadedExercises = responseData.map(exercise => {
                     exercise.id = exercise._id
+                    // exercise title and description sentence case
+                    // exercise.title = exercise.title.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
                     return exercise
                 });
                 return exercisesAdapter.setAll(initialState, loadedExercises)
@@ -34,7 +36,7 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
                 } else return [{type: 'Exercise', id: 'LIST'}]
             }
         }),
-        addExercise: builder.mutation({
+        addNewExercise: builder.mutation({
             query: initialExercieData => ({
                 url: '/exercises',
                 method: 'POST',
@@ -69,6 +71,7 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
 
 export const {
     useGetExercisesQuery,
+    useAddNewExerciseMutation,
     useUpdateExerciseMutation,
     useDeleteExerciseMutation,
 } = exercisesApiSlice

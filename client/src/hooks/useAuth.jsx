@@ -6,6 +6,7 @@ const useAuth = () => {
     const token = useSelector(selectCurrentToken)
     let isManager = false
     let isAdmin = false
+    let isClient = false
     let status = "Employee"
 
     // if we have a token from the server, decode it and pull off the username and roles from the userInfo object
@@ -20,11 +21,12 @@ const useAuth = () => {
 
         isManager = roles.includes('Manager')
         isAdmin = roles.includes('Admin')
+        isClient = roles.includes('Client')
 
         if (isManager) status = "Manager"
         if (isAdmin) status = "Admin"
 
-        return { username, roles, status, isManager, isAdmin }
+        return { username, roles, status, isManager, isAdmin, isClient }
     }
 
     return { username: '', roles: [], isManager, isAdmin, status }
