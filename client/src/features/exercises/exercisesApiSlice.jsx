@@ -37,7 +37,7 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
             }
         }),
         addNewExercise: builder.mutation({
-            query: initialExercieData => ({
+            query: initialExerciseData => ({
                 url: '/exercises',
                 method: 'POST',
                 body: {...initialExerciseData}
@@ -61,6 +61,16 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
                 url: '/exercises',
                 method: 'DELETE',
                 body: {id}
+            }),
+            invalidatesTags: (result, error, arg) => [
+                {type: 'Exercise', id: arg.id}
+            ]
+        }),
+        deleteExerciseLoad: builder.mutation({
+            query: ({exerciseId, loadId}) => ({
+                url: '/exercises/load',
+                method: 'DELETE',
+                body: {exerciseId, loadId}
             }),
             invalidatesTags: (result, error, arg) => [
                 {type: 'Exercise', id: arg.id}

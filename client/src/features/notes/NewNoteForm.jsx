@@ -74,7 +74,7 @@ const NewNoteForm = ({ users }) => {
                 <label className="form__label" htmlFor="title">
                     Title:</label>
                 <input
-                    className={`form__input ${validTitleClass}`}
+                    className={`form__input ${validTitleClass} text-gray-800`}
                     id="title"
                     name="title"
                     type="text"
@@ -86,7 +86,7 @@ const NewNoteForm = ({ users }) => {
                 <label className="form__label" htmlFor="text">
                     Text:</label>
                 <textarea
-                    className={`form__input form__input--text ${validTextClass}`}
+                    className={`form__input form__input--text ${validTextClass} text-gray-800`}
                     id="text"
                     name="text"
                     value={text}
@@ -98,7 +98,7 @@ const NewNoteForm = ({ users }) => {
                 <select
                     id="username"
                     name="username"
-                    className="form__select"
+                    className="form__select text-gray-800"
                     value={userId}
                     onChange={onUserIdChanged}
                 >

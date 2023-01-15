@@ -70,16 +70,11 @@ export default function ExercisesList() {
                       scope="col"
                       className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-300 lg:table-cell"
                     >
-                      Title
+                      Description
                     </th>
-                    <th
-                      scope="col"
-                      className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-300 sm:table-cell"
-                    >
-                      Email
-                    </th>
+
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-300">
-                      Role
+                      Latest
                     </th>
                     <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
                       <span className="sr-only">Edit</span>
@@ -87,27 +82,29 @@ export default function ExercisesList() {
                   </tr>
                 </thead>
                 <tbody>
-                  {ids.map((exerciseId) => (
+                  {ids.map((exerciseId) => {
+                    const entry = entities[exerciseId]
+                    return (
                     <tr key={entities[exerciseId].name}>
                       <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-300 sm:w-auto sm:max-w-none sm:pl-6">
                         {entities[exerciseId].name}
                         <dl className="font-normal lg:hidden">
-                          <dt className="sr-only">Title</dt>
-                          <dd className="mt-1 truncate text-gray-400 text-xs">{entities[exerciseId].description}</dd>
+                          <dt className="sr-only">Description</dt>
+                          <dd className="mt-1 truncate text-gray-400 text-xs">{entry.description}</dd>
                           <dt className="sr-only sm:hidden">Email</dt>
                           {/* <dd className="mt-1 truncate text-gray-300 sm:hidden">{entities[exerciseId].id}</dd> */}
                         </dl>
                       </td>
-                      <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entities[exerciseId].name}</td>
-                      <td className="hidden px-3 py-4 text-sm text-gray-300 sm:table-cell">{entities[exerciseId].name}</td>
-                      <td className="px-3 py-4 text-sm text-gray-300">{entities[exerciseId].name}</td>
+                      <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entry.description}</td>
+                      {/* // latest load */}
+                      <td className="px-3 py-4 text-sm text-gray-300">{entry.loads.length? entry.loads[0].load : "-"}</td>
                       <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <button onClick={() => handleEdit(entities[exerciseId].id)} className="text-indigo-600 hover:text-indigo-900">
                           Edit<span className="sr-only">, {entities[exerciseId].name}</span>
                         </button>
                       </td>
                     </tr>
-                  ))}
+                  )})}
                 </tbody>
               </table>
             </div>

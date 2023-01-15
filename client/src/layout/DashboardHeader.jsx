@@ -40,17 +40,21 @@ export default function DashboardHeader() {
   if (isManager || isCoach || isAdmin) {
     secondaryNav = (
       <>
-        <Link to="/dash/exercises" className="text-base font-medium text-white hover:text-indigo-50"><p>Exercises</p></Link>
-        <Link to="/dash/notes/new-note" className="text-base font-medium text-white hover:text-indigo-50"><p>New Note</p></Link>
-        <Link to="/dash/notes" className="text-base font-medium text-white hover:text-indigo-50"><p>All Notes</p></Link>
-        <Link to="/dash/users" className="text-base font-medium text-white hover:text-indigo-50"><p>All Users</p></Link>
-        <Link to="/dash/users/new-user" className="text-base font-medium text-white hover:text-indigo-50"><p>Add New User</p></Link>
+        <div className='flex space-x-2'>
+        <Link to="/dash/exercises" className=" font-medium hover:text-indigo-50"><p>Exercises</p></Link>
+        <Link to="/dash/notes/new-note" className=" font-medium hover:text-indigo-50"><p>New Log</p></Link>
+        <Link to="/dash/notes" className=" font-medium hover:text-indigo-50"><p>Journal</p></Link>
+        </div>
+        <div className='flex space-x-2'>
+          <Link to="/dash/users" className="font-medium hover:text-indigo-50"><p>All Users</p></Link>
+          <Link to="/dash/users/new-user" className="font-medium hover:text-indigo-50"><p>Add New User</p></Link>
+        </div>
     </>
     )
   } else {
     secondaryNav = (
       <>
-        <Link to="/dash/notes" className="text-base font-medium text-white hover:text-indigo-50"><p>All Notes</p></Link>
+        <Link to="/dash/notes" className="text-base font-medium text-white hover:text-indigo-50"><p>Workout Logs</p></Link>
       </>
     )
   }
@@ -70,13 +74,13 @@ export default function DashboardHeader() {
 
   return (
     <>
-    <header className="bg-base">
+    <header className="bg-base md:mb-6">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
           <div className="flex items-center">
             <a href="#">
               <span className="sr-only">PRGRESS</span>
-              <img className="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
+              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
             </a>
             <div className="hidden ml-10 space-x-8 lg:flex lg:items-center">
               {secondaryNav}

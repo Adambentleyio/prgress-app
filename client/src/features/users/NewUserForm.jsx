@@ -115,7 +115,7 @@ const content = (
           <label className="form__label" htmlFor="username">
               Username: <span className="nowrap">[3-20 letters]</span></label>
           <input
-              className={`form__input ${validUserClass}`}
+              className={`form__input ${validUserClass} text-gray-800`}
               id="username"
               name="username"
               type="text"
@@ -127,7 +127,7 @@ const content = (
           <label className="form__label" htmlFor="password">
               Password: <span className="nowrap">[4-12 chars incl. !@#$%]</span></label>
           <input
-              className={`form__input ${validPwdClass}`}
+              className={`form__input ${validPwdClass} text-gray-800` }
               id="password"
               name="password"
               type="password"
@@ -140,7 +140,7 @@ const content = (
           <select
               id="roles"
               name="roles"
-              className={`form__select ${validRolesClass}`}
+              className={`form__select ${validRolesClass} text-gray-800`}
               multiple={true}
               size="3"
               value={roles}

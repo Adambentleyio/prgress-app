@@ -48,7 +48,7 @@ const NotesList = () => {
             <div className="px-4 sm:px-6 lg:px-8">
             <div className="sm:flex sm:items-center">
               <div className="sm:flex-auto">
-                <h1 className="text-xl font-semibold text-gray-300">Exercises</h1>
+                <h1 className="text-xl font-semibold text-gray-300">Workout log</h1>
                 <p className="mt-2 text-sm text-gray-300">
                   A list of all users in your account including their name, title, email and role.
                 </p>

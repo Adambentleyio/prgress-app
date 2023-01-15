@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import useAuth from "../../hooks/useAuth"
+import { exercisesApiSlice } from "../exercises/exercisesApiSlice"
 
 const EditNoteForm = ({ note, users }) => {
 
@@ -161,6 +162,7 @@ const EditNoteForm = ({ note, users }) => {
                         <p className="form__updated">Updated:<br />{updated}</p>
                     </div>
                 </div>
+
             </form>
         </>
     )

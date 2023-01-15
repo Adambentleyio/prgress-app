@@ -8,6 +8,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')({
+      strategy: 'base', // only generate global styles
+    }),
   ],
 }

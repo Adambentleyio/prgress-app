@@ -8,7 +8,7 @@ const DashboardLayout = () => {
     <>
     <DashboardHeader />
     <div className="dash-container">
-      <Outlet />
+        <Outlet/>
     </div>
     <DashboardFooter />
     </>

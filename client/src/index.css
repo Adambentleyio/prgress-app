@@ -97,6 +97,12 @@ button:focus-visible {
   flex-flow: column nowrap;
 }
 
+#root > * > * {
+max-width: 1400px;
+justify-content: center;
+margin: 0 auto;
+}
+
 .errmsg {
   display: inline-block;
   background-color: var(--TABLE-BGCOLOR);
@@ -241,7 +247,7 @@ tr {
 }
 
 .form__input,
-.form__submit-button {
+.form__submit- {
   padding: 0.5em;
   border-radius: 5px;
 }

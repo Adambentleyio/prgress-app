@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import useAuth from "../../hooks/useAuth"
+import NewExerciseLoadForm from "./NewExerciseLoadForm"
 
 const EditExerciseForm = ({ exercise, users }) => {
 
@@ -32,10 +33,10 @@ const EditExerciseForm = ({ exercise, users }) => {
     useEffect(() => {
 
         if (isSuccess || isDelSuccess) {
-            setTitle('')
-            setText('')
+            setName('')
+            setDescription('')
             setUserId('')
-            navigate('/exercises') //! Change to /dash/exercises on fix routes
+            navigate('/dash/exercises')
         }
 
     }, [isSuccess, isDelSuccess, navigate])
@@ -56,8 +57,9 @@ const EditExerciseForm = ({ exercise, users }) => {
         await deleteExercise({ id: exercise.id })
     }
 
-    const created = new Date(exercise.createdAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
-    const updated = new Date(exercise.updatedAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+    const dateConverter = mongoDbDate => {
+        return new Date(mongoDbDate).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric'})
+    }
 
     const options = users.map(user => {
         return (
@@ -95,23 +97,13 @@ const EditExerciseForm = ({ exercise, users }) => {
 
             <form className="form" onSubmit={e => e.preventDefault()}>
                 <div className="form__title-row">
-                    <h2>Edit {exercise.name}</h2>
-                    <div className="form__action-buttons">
-                        <button
-                            className="icon-button"
-                            title="Save"
-                            onClick={onSaveNoteClicked}
-                            disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
-                        {deleteButton}
-                    </div>
+                    <h2 className="text-lg font-bold text-indigo-600">{exercise.name}</h2>
                 </div>
+                <NewExerciseLoadForm id={exercise.id} />
                 <label className="form__label" htmlFor="note-title">
                     Title:</label>
                 <input
-                    className={`form__input ${validTitleClass}`}
+                    className={`form__input ${validTitleClass} text-gray-900`}
                     id="note-title"
                     name="title"
                     type="text"
@@ -123,7 +115,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                 <label className="form__label" htmlFor="note-text">
                     Text:</label>
                 <textarea
-                    className={`form__input form__input--text ${validTextClass}`}
+                    className={`form__input form__input--text ${validTextClass} text-gray-800`}
                     id="note-text"
                     name="text"
                     value={description}
@@ -137,7 +129,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                         <select
                             id="note-username"
                             name="username"
-                            className="form__select"
+                            className="form__select text-gray-800 "
                             value={userId}
                             onChange={onUserIdChanged}
                         >
@@ -145,10 +137,44 @@ const EditExerciseForm = ({ exercise, users }) => {
                         </select>
                     </div>
                     <div className="form__divider">
-                        <p className="form__created">Created:<br />{created}</p>
-                        <p className="form__updated">Updated:<br />{updated}</p>
+                        <p className="form__created">Created:<br />{dateConverter(exercise.createdAt)}</p>
+                        <p className="form__updated">Updated:<br />{dateConverter(exercise.updatedAt)}</p>
                     </div>
                 </div>
+                <div className="flex space-x-4">
+                    <ul>
+                    {exercise.loads?.map(load => {
+                        return (
+                            <div className="my-4" key={load._id}>
+
+                                 <li className="text-sm">
+                                    <p className="font-bold text-md">{load.load} Kg</p>
+
+                                 </li>
+                                 <li className="text-sm">
+                                    <p className="font-bold text-md">{load.note}</p>
+                                 </li>
+                                 <li className="text-sm">
+                                    <p className="font-bold text-md">{dateConverter(load.date)}</p>
+                                 </li>
+
+                            </div>
+                        )
+                    }
+                    )}
+                    </ul>
+                </div>
+                <div className="space-x-3">
+                        <button
+                            className="icon-button"
+                            title="Save"
+                            onClick={onSaveNoteClicked}
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon icon={faSave} />
+                        </button>
+                        {deleteButton}
+                    </div>
             </form>
         </>
     )
