@@ -1,0 +1,238 @@
+20221022	19:58:10	04a590cb-2b29-457a-b22f-2ca5e3861696	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5174
+20221022	19:59:11	503e46c7-e93d-4b8c-adaa-c50e69f05e4a	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5174
+20221022	20:00:11	8b940ff6-4fbd-448a-bec5-449935063a1d	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5174
+20221022	20:01:11	0547351c-8a33-4494-9697-ff9f25f03e98	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5174
+20221022	20:02:11	0d5e79b7-58c8-40f3-8199-9669f7cc3eb7	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5174
+20221022	20:30:57	310d79dc-6ba8-467d-8694-b9bcb5d23ec1	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	undefined
+20221022	20:31:09	181452cf-98e0-4aff-af97-a13bd7c43686	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	undefined
+20221022	20:31:46	0160fef9-aedf-46b2-bbc8-0d06fdea5797	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	http://127.0.0.1:5174
+20221022	20:32:38	2bfd03a8-df0a-422a-99c7-ff25b0b09658	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	undefined
+20221022	20:32:43	67d3956b-bc38-42b2-b7f9-eb40045da534	SyntaxError: Unexpected end of JSON input	GET	/notes	undefined
+20221022	20:32:46	a00d3f33-d7b1-46fc-9bf3-fdf130209d03	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	http://127.0.0.1:5174
+20221022	20:32:58	45093f51-66e5-454d-b8ce-6e071953d4e7	SyntaxError: Unexpected end of JSON input	GET	/notes	undefined
+20221022	20:33:46	46cfa4ac-ad9d-4db7-b13a-c713f5aeccd1	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	http://127.0.0.1:5174
+20221022	20:34:46	9175a8ab-0d84-46ad-8fb4-7e09e340075d	TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET	/notes	http://127.0.0.1:5174
+20221022	20:37:07	701c1290-3598-46e0-9371-8d3dbd5cf3c5	SyntaxError: Unexpected end of JSON input	GET	/notes	undefined
+20221022	20:37:09	ffa7ab0d-7eb1-4bda-896e-2c9d04d3d542	SyntaxError: Unexpected end of JSON input	GET	/notes	undefined
+20221022	20:38:45	8abc3225-bdff-49dd-9b4f-a0ea5d686e38	SyntaxError: Unexpected end of JSON input	GET	/notes	undefined
+20221022	23:36:51	55fec665-5488-41bc-aecc-2a54711637d8	ValidationError: Note validation failed: user: Cast to ObjectId failed for value "hank" (type string) at path "user" because of "BSONTypeError"	POST	/notes	undefined
+20221022	23:39:29	a4c1214a-825c-477e-a0fc-88cda2f20585	SyntaxError: Unexpected string in JSON at position 27	POST	/notes	undefined
+20221022	23:39:37	edd2eb6a-4715-4757-9452-72cc0db1808a	ValidationError: Note validation failed: user: Cast to ObjectId failed for value "hank" (type string) at path "user" because of "BSONTypeError"	POST	/notes	undefined
+20221023	10:47:43	d61b6b53-0201-4725-be96-8edadd3daa05	ValidationError: User validation failed: roles.0: Cast to [string] failed for value "[ [ 'Admin' ] ]" (type string) at path "roles.0" because of "CastError"	POST	/users	http://127.0.0.1:5174
+20221023	10:53:02	dba6b675-6615-4a4a-b3ff-7e19110328ef	ValidationError: User validation failed: roles.0: Cast to [string] failed for value "[ [ 'Manager' ] ]" (type string) at path "roles.0" because of "CastError"	POST	/users	http://127.0.0.1:5174
+20221023	11:32:57	fc57b47c-61de-4580-ae90-ffa874c505e0	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5174
+20221023	11:33:14	3f0cfe6b-c8f4-4d9b-a3ce-388e87ea01c5	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5174
+20221027	13:29:17	f7e4153d-a017-46e9-aa66-24664ef56a1a	SyntaxError: Unexpected token } in JSON at position 42	POST	/auth	undefined
+20221027	13:29:59	7a3cb67d-b8fe-41e5-af39-2b001f50b1d0	ReferenceError: jtw is not defined	POST	/auth	undefined
+20221027	13:34:59	4d3acca0-462f-4ed6-b256-2bd012c23c3f	ReferenceError: jtw is not defined	POST	/auth	undefined
+20221027	13:36:00	20d8d5b1-c629-437a-9750-6488927a9dbe	ReferenceError: jtw is not defined	POST	/auth	undefined
+20221027	13:36:33	9b6cd70a-854a-46ac-934e-12c0273e7358	ReferenceError: jtw is not defined	POST	/auth	undefined
+20221027	13:37:17	e23022a5-b054-4c93-87a3-726d190ee3c2	TypeError: res.join is not a function	POST	/auth	undefined
+20221031	13:57:12	4691a357-4b04-4f72-8b9b-e4cca7b55417	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:58:52	892098dd-e35a-45d7-9db0-ab3019dd718b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:58:59	eee4cc03-ff4e-4d62-a3c9-9b36bde0dcf9	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:02	8cf2ae82-035f-4e91-bfaa-cbada537306d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:07	e2a0022d-96ba-4ae0-bf43-473d50f8c8d0	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:21	bb479bd9-0449-40ec-9049-1e0a0485672d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:36	3adc3c01-f16a-40e7-89a4-76d1e9af8685	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:47	5ea2c1a3-c278-4e4d-8034-fd3c01d2dc40	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	13:59:51	049a56d2-efe8-4099-9cbe-51be3b6b62f5	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:00:51	9cc1b1ad-4def-4907-bf5d-f1c6f0b0b328	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:01:51	531960c0-deaf-4958-b4be-b07ccfcd0fa5	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:02:51	c8463b18-d295-40cd-92db-613d809362e5	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:03:51	3651056d-4bd9-4a61-9b36-b919866f47f9	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:04:51	9b6a24f7-59cb-4c13-9849-cd67bc8b2310	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:05:51	19416e1a-0396-4709-8284-5e95698243f9	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:06:51	dadebbd2-2d47-42c7-850f-9e03ee4c5110	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:07:51	56885e6b-4e14-480a-9f7f-404b219fee33	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:08:51	5756c05c-6da9-4ddf-b498-78cbad00564c	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:09:51	ea488127-8c64-432d-8ad7-7bf605dfb946	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:10:51	1a76d93b-8bfc-4b70-88bd-1dbe96584938	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:11:52	6ccf275e-3239-43b5-b4bc-2b373bb13050	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:12:52	cd79a286-3515-4c1c-b5fc-2f443248fe22	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:13:52	f2722a91-b285-493b-ae26-544a0772c9b8	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:14:52	a133e3a9-5c60-4522-92a4-dc1d6c56d1ac	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:15:52	5fc90bd1-a1e7-4362-ba11-dd1cdce47cfa	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:16:52	e229cb4b-3e1b-4906-88ab-438ac2b54860	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:17:52	ac5bb59e-ca6a-43fa-8873-c326979169a7	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:18:52	a4244dfb-d38b-4e1b-8bc7-8747c9706e77	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:19:53	13894946-57fe-48e9-a70d-e48ca206b6b2	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:20:53	c2e06710-3031-4e06-bad1-8b8da6922719	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:21:53	0f38c5cd-030b-41ce-9e04-dc5ead497619	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:22:53	3f43e0ed-f947-403e-a2d2-7843e2f88fb4	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:23:53	2dca5e2a-f9cb-473e-bda0-6a2470c36bc8	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:24:53	c3827839-8d6c-4a8e-986f-15936962d0fb	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:25:53	8dc16619-ce6d-4cfe-9f5b-0727a9928a2c	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:26:53	7344b97d-1953-44c4-80b1-48cd9517cb6b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:27:53	41f0d332-ece0-444b-b57d-6fbb28830d15	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:28:53	dfe4fc19-6d62-4189-99c2-7b3e07f3cecc	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:29:53	f7aa9ae2-b5fb-42c5-bd5c-7d4037001aec	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:30:53	818b831d-1c95-4bfd-9ebd-e0284130e252	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:31:54	36b9c4a6-5a19-4f8a-b597-2de85aa3565d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:32:54	34cbc717-5fb8-42f5-805f-d1de9a105977	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:33:54	e2814894-8268-4c96-8831-883d1fa84578	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:34:54	030e3b79-253b-411b-8ecc-909cdf68c2d9	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:35:54	536b75f9-30b6-4b2b-b61a-89d2b7d11c26	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:36:54	0d480b85-b1b5-41a2-85de-453eafd31288	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:37:54	c8b8acfb-5db1-4144-9b93-ce87e822776b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:38:54	f3c9609e-e4da-4603-b3a9-9ff2f6c3fa99	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:39:54	0629f60a-0054-4cd9-93af-406d50434b62	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:40:55	9a1aaf7e-edf9-4ec8-9125-c6b9dde0cc73	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:41:55	f5753342-5629-4923-a37a-7e22707f9eaa	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:42:55	805da4d3-e2fa-4658-bd24-6e15ce6a748a	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:44:07	40dea650-a69b-4eb7-9b98-5226dfeb4495	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:45:07	6f6861d7-3fa2-4e91-acc6-3baa3b7ac354	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:46:07	011e25e0-7844-4ede-b9ca-bea9baf2eaa5	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:47:07	8e8a4460-a492-49d7-99a2-4de95b346134	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:48:07	00af5f71-19c4-44ba-b393-eadf6b137000	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:49:07	263f12f5-412c-4c8b-bbb1-c82146ef2b2c	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:50:07	b40c8aca-067a-45a5-9912-40707745c10b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:51:07	67195e8f-bfa5-49f4-b002-5de6e8b23336	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:52:07	e2ef6fe4-3bdb-4d78-86c8-58487323837b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:53:07	e136c9c7-3446-4a86-b3fe-b1b52c76a7ba	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:54:07	4c180c6b-6f3e-4622-b673-088c21023675	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:55:07	355bc5b3-a703-47d4-99c2-ebea54442840	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:56:07	3a009197-780a-42ca-84db-ec178b7576b0	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:57:08	95d27110-79b2-4c64-8fe1-7acde1323007	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:58:08	ce3d5adc-283e-431d-bf11-ab0fee2d6e09	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	14:59:08	c556ae55-07e0-43e8-b9b5-bffd3735b3e3	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	15:00:08	32c808bd-847d-47b0-ab83-8d3cb7b5280d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	15:01:08	2fb7ef58-6fa3-402c-8931-1280612260dd	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221031	15:31:36	ddbca4dc-ba24-405d-9468-3db46703c844	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:04:28	e3659a5d-8929-4f61-99c4-012a4e2927e2	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:04:33	332d2f51-2d2e-4968-acc7-7d5e8a5d9402	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:04:38	37939350-74f6-4ea9-a6fb-893379b870bf	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:04:40	5f298383-c27a-411e-bec7-0c4b24bc4572	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:04:43	2887eda4-12cd-4078-927a-0f17ffcc734d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:05:27	a73575db-89fc-42e2-9ea5-5be455b4252d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:05:38	d2d33553-47de-430d-982b-3a034436288b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:27	a389e68b-9b24-4710-b9d5-c31511c72f7f	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:28	b252a322-854e-45c0-a8a7-e8d0e1502da0	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:29	da1f389b-f797-4bf7-93c6-daebfc863513	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:38	65bd1ec8-1529-4873-9255-584f3fa794e0	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:50	0dd1b78b-5eb9-492b-a648-03f8f50cddd5	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:52	fbad37bd-54b8-4665-83b6-9a582c18c3f0	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:06:52	a3884cc4-3408-43a0-baee-fa5925c6ee00	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:03	4c08bcb8-0eeb-49f3-b61d-763475563f72	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:30	1b3a2c49-6c43-4310-a6ae-41a14768e7ec	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:34	e698638c-74e5-4057-b7b3-40365a31092a	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:35	133c3114-a968-43da-adeb-a7e6459c0ac4	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:37	2136e89d-fc38-4db3-8afb-08089dc2b982	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:39	ef5b91d8-4bf8-4702-9559-e4ed80b840df	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:40	62cd2feb-b3e3-414c-b8cd-ec847031aa9d	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:50	f61175fb-a39c-4668-b96f-c858d0c67b43	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:53	0c43d5db-d855-4f50-b173-07a0438a0571	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:53	bcf32744-5507-4dc7-a617-9becc3fe4538	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:53	bd1de1d6-619e-4a74-9b76-eddee9bf2a07	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:07:57	320e043a-b4ba-4be7-9afe-401e8a9b371a	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:00	185b69b6-cf6b-45bd-9343-644ac5c22c37	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:01	85dd43ea-009b-4b51-9e81-1a0e89b7963b	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:17	a248f56a-61d6-4fac-af86-f5359ee44a48	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:53	8cb3f027-ee2a-4908-903e-3a9dd71b625e	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:54	da049cde-ccab-45b9-b1bf-02657bd2b913	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:08:56	dccb38ef-87c4-479e-ac4b-bf293a185aed	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:08	de3e0b0e-65f0-436b-8e7e-b50181a6c382	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:16	c1a582d4-0150-45ce-ad55-297d75c19821	ReferenceError: User is not defined	GET	/notes	undefined
+20221101	10:09:22	551f422c-33d5-436e-876f-af85df40b802	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:39	46af86b8-0757-4c7b-a041-ac40d0e2ba35	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:41	d9fe7234-377d-4939-8e41-7f216b9757b2	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:53	5c0cc55d-e043-47bb-8e19-cca5ae13ca22	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221101	10:09:55	fda140f0-f64f-4d46-a93f-30c3b7119cba	ReferenceError: User is not defined	GET	/notes	http://127.0.0.1:5174
+20221102	10:28:24	86646bf2-ef85-4067-93f2-68e251ed0a03	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5174
+20221102	10:28:29	aa63433d-7070-48ac-a67f-b20c36820f55	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5174
+20221102	10:28:31	6de05ed4-060a-48c4-9d7f-1fa456c1e2ad	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5174
+20221103	13:14:02	9edc220f-1a95-4bdf-888d-4019a35c774f	Error: Hold up! You're not allowed by CORS	GET	/notes	http://127.0.0.1:5173
+20221103	13:14:02	084f429a-6afe-40b7-8dad-4af9052b22ae	Error: Hold up! You're not allowed by CORS	GET	/users	http://127.0.0.1:5173
+20221103	13:22:52	97c455d8-eca1-4b2d-9a3c-594a092582bc	Error: Hold up! You're not allowed by CORS	OPTIONS	/auth	http://127.0.0.1:5173
+20221103	13:22:58	97bd41ba-7e85-4511-ad0b-36952b21bed1	Error: Hold up! You're not allowed by CORS	OPTIONS	/auth	http://127.0.0.1:5173
+20221109	13:43:50	58d4774b-3d78-4c08-b332-d27255a56a7b	MongoNetworkError: connect ETIMEDOUT 63.32.142.198:27017	GET	/notes	http://127.0.0.1:5173
+20221109	13:45:34	8e63c66e-8492-4eae-a590-c88aa9c87cb0	MongoNetworkError: connect ETIMEDOUT 63.32.142.198:27017	GET	/notes	http://127.0.0.1:5173
+20221109	13:47:04	528010a9-062d-4fbe-a24c-08e371a63ddc	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221109	13:50:49	f175e0a8-c4b7-495c-a993-fdd2f39bd449	MongoNetworkError: connection 22 to 63.32.142.198:27017 closed	GET	/notes	http://127.0.0.1:5173
+20221109	14:55:54	74e53b3b-883d-44de-a237-e9830315109a	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221109	15:01:37	e1812e94-f8ba-4f21-9efb-a17c54069c24	ValidationError: Exercise validation failed: user: Path `user` is required.	POST	/exercises	undefined
+20221109	15:01:52	c4d282ca-4b01-4377-9571-a246c3e78f42	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221109	15:06:39	5cd4a56c-b251-4f88-aa32-ff6e6c48883b	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221109	15:07:17	b0ac60b7-a340-49c8-a240-aeddb4a96a06	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221109	15:11:52	c22db49f-b1ca-4378-a918-ede804b3ec40	ReferenceError: mongoose is not defined	POST	/exercises	undefined
+20221109	15:23:31	1f48ca13-f39e-4659-a6ea-c53a027f55c4	ReferenceError: mongoose is not defined	POST	/exercises	undefined
+20221109	15:30:02	2b3991fb-f118-408a-8667-c0c82e43fdfe	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221109	16:32:42	d096402f-c485-486e-bb1e-d89a1016a46c	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	undefined
+20221110	13:37:17	104eda4e-d404-4857-adc2-1fc0cb3436f7	MongoNetworkTimeoutError: connection timed out	GET	/notes	http://127.0.0.1:5173
+20221110	13:38:47	fbf7ac34-185a-424a-b28e-e9c03eae28c5	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221110	13:39:53	25c36dc3-ea77-4c97-9146-9d194ae95461	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221110	13:42:04	f04861a0-d1d6-4e22-928f-14af370c9d18	MongooseServerSelectionError: connection timed out	GET	/notes	http://127.0.0.1:5173
+20221110	13:47:10	c1fe23ad-216b-4b7d-9617-5fa468d064e9	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221110	13:48:40	5108a30b-3088-4e28-b9e6-161a0b6775b3	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221110	13:50:10	7e97c4cf-32ba-4f7a-96b1-feb0a7cdb1c9	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/notes	http://127.0.0.1:5173
+20221112	20:28:08	c1ebe087-6771-4b7f-89f9-57d8318abecc	TypeError: Cannot read properties of undefined (reading 'push')	PATCH	/exercises	undefined
+20221113	14:18:33	47d61451-bafa-4a72-9078-20d9c6b021aa	TypeError: load is not iterable	PATCH	/exercises	undefined
+20221113	14:19:31	d127caf4-a36c-49a2-896e-8508f940adc3	TypeError: load is not iterable	PATCH	/exercises	undefined
+20221113	14:20:46	b07dc54b-781f-42b4-a019-f5eae188f2b6	TypeError: Assignment to constant variable.	PATCH	/exercises	undefined
+20221113	14:31:50	b455100e-4103-4f1c-942c-46c3e2f38d3c	ReferenceError: Cannot access 'exercise' before initialization	DELETE	/exercises	undefined
+20221113	14:32:01	8f0388bf-7dfe-47cb-9cb1-11d9daa508d1	ReferenceError: Cannot access 'exercise' before initialization	DELETE	/exercises	undefined
+20221113	14:33:32	5063a73e-94e3-4faa-a489-e584228a0da8	ReferenceError: exercise is not defined	DELETE	/exercises	undefined
+20221113	14:34:26	12ef1b22-f56a-4d43-9aa3-55b13be16f12	ReferenceError: exercise is not defined	DELETE	/exercises	undefined
+20221113	14:34:28	bdc2e4d0-6e4b-48d7-8275-87b7c538f527	ReferenceError: exercise is not defined	DELETE	/exercises	undefined
+20221113	14:34:40	d570d039-4559-4769-a78d-a45ece5a1066	TypeError: Cannot read properties of undefined (reading 'findById')	DELETE	/exercises	undefined
+20221113	14:47:18	c92d2e1f-fc41-4b48-9e92-372c35d7a3cb	ReferenceError: ExerciseById is not defined	DELETE	/exercises	undefined
+20221113	14:48:31	0b6e84c7-bd4c-461a-88e3-87728adf0bfc	ReferenceError: ExerciseById is not defined	DELETE	/exercises	undefined
+20221113	14:50:11	f0bd77b6-a50c-4784-b9d5-7ac69f5d5f3d	ReferenceError: ExerciseById is not defined	DELETE	/exercises	undefined
+20221113	14:56:20	01d4bf17-bf8c-4045-b032-285caf0fd1f6	TypeError: exerciseById.loads.findById is not a function	DELETE	/exercises	undefined
+20221113	15:01:19	c65e41bb-b630-4be4-8579-d08add91e465	TypeError: #<Object> is not a function	DELETE	/exercises	undefined
+20221113	15:01:35	65dd75ea-2cf2-43d8-9f5a-46ef40663abd	TypeError: exerciseById.loads.select is not a function	DELETE	/exercises	undefined
+20221115	14:46:52	aedfb0e9-1a14-4688-a122-09f03e0fed99	TypeError: exerciseById.loads.select is not a function	DELETE	/exercises	undefined
+20221115	14:48:03	dd7c9627-4394-49ff-8cc9-00a1ef75f004	TypeError: exerciseById.loads.select is not a function	DELETE	/exercises	undefined
+20221115	14:49:01	b504c115-569b-4f0e-a894-54f96c05e7a9	TypeError: Exercise.findById(...).exec(...).json is not a function	DELETE	/exercises	undefined
+20221115	14:52:16	73ce99e9-febf-4c27-951c-f907660b0a81	TypeError: Exercise.findById(...).exec(...).json is not a function	DELETE	/exercises	undefined
+20221115	14:52:35	4e5621cc-e3a6-4b95-8391-05aae0533707	TypeError: exerciseById.find is not a function	DELETE	/exercises	undefined
+20221115	14:57:04	27089727-9fff-4567-92e4-de62fa744061	ReferenceError: resjson is not defined	DELETE	/exercises	undefined
+20221123	10:21:00	bbdc0473-8ed7-4107-b81d-90538af1998f	Error: Cannot set headers after they are sent to the client	POST	/users	undefined
+20221123	12:51:09	48ed50e8-97d8-4bef-88a4-c15b43e4017a	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20221123	12:52:17	0ac607a5-f63d-42d8-8b84-6dfea6145173	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20221123	13:14:27	8f3181fa-27bb-4084-9886-586a0ebee6e6	MongooseServerSelectionError: getaddrinfo ENOTFOUND mern01-shard-00-02.akpif.mongodb.net	GET	/exercises	http://127.0.0.1:5173
+20221124	10:00:39	b648b656-289b-4754-bf55-6b15f222729c	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20221124	10:01:43	aa11b8d2-0aa7-4e90-afa2-03c8d955fa91	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20221124	10:01:52	81a7821b-f518-4de8-a9c1-a905a27b947f	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20221124	10:02:25	9e3cfb25-e7e6-4006-9e36-4314896da334	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20221124	10:03:42	e676c432-fd55-4064-90aa-297fcec7a09f	Error: Cannot set headers after they are sent to the client	POST	/users	undefined
+20230104	14:56:27	8badcbe1-0d24-47b4-bda6-2857cdf59487	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20230104	14:57:58	01004abc-051e-43d5-9094-5b2ccf79c5ac	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20230105	15:49:43	ee1c85a1-f150-4e77-82c2-21ce70cf1014	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20230109	13:39:43	fe959efa-bfb2-4e01-b1b8-a2d82694c4ad	ReferenceError: User is not defined	POST	/exercises	http://127.0.0.1:5173
+20230109	13:40:33	8ab0c719-516c-4606-b6e7-4a815e63c105	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5173
+20230109	13:42:16	aefce1f1-d435-43b6-b623-9fc08c5d600d	ReferenceError: User is not defined	POST	/exercises	http://127.0.0.1:5173
+20230109	13:43:34	e3b5610b-394f-4ef2-943d-51df05d62bde	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hanksmum" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
+20230109	13:48:37	b6c13f97-8059-4ac2-abb3-05e2e7f76638	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
+20230110	07:20:57	38c04d83-a028-4903-9f5f-e0a06b4a6b94	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
+20230110	07:46:55	c1e978fb-8bc5-44c9-abc0-241348b076a6	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
+20230110	07:49:59	99a5a9bc-7c88-4664-903a-65062717236e	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
+20230110	08:14:16	a9aea6fc-26bd-4b79-a640-44241cabe3b8	CastError: Cast to ObjectId failed for value "6399" (type number) at path "_id" for model "User"	POST	/exercises	http://127.0.0.1:5173
