@@ -18,6 +18,24 @@ const getAllExercises = async (req, res) => {
 
 }
 
+const getUsersExercises = async (req, res) => {
+    const { user } = req.body
+
+    // find Exercises that match the user
+    const exercises = await Exercise.aggregate([
+        {
+            $match: { userById: mongoose.Types.ObjectId(user)}
+        }
+    ])
+
+    if (!exercises?.length) {
+        return res.status(400).json({message: "We can't find any exercises that match the user Id"})
+    }
+
+    return res.json(exercises)
+
+}
+
 // @Desc create an exercise
 // @route POST /exercises
 // @access Private
@@ -25,9 +43,9 @@ const getAllExercises = async (req, res) => {
 const createNewExercise = async (req, res) => {
     const { user, id, name, description, load } = req.body
 
-    //add this line as a check to validate if object id exists in the database or not
-    // if (!mongoose.Types.ObjectId.isValid(id))
-    // return res.status(404).json({ msg: `No objectId in the database with id :${id}` });
+    //add this line as a check to validate if object id for user exists in the database or not
+    if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).json({ msg: `No objectId in the database with id :${id}` });
 
     // find user
     const userIsValid = await User.findOne({user})
@@ -58,7 +76,7 @@ const createNewExercise = async (req, res) => {
     const newExercise = await Exercise.create({ userById, name, description, load })
 
     if (newExercise) { // Created
-        return res.status(201).json({ message: 'New exercise created' })
+        return res.status(201).json({ message: 'New exercise created', newExercise })
     } else {
         return res.status(400).json({ message: 'Invalid exercise data received' })
     }
@@ -89,7 +107,6 @@ const addExerciseLoad = async (req, res) => {
 
     res.json(`'${updatedExercise}' updated`)
 }
-
 
 
 // @desc Delete an exercise
@@ -161,9 +178,11 @@ const deleteExerciseLoad = async (req, res) => {
 
 module.exports = {
     getAllExercises,
+    getUsersExercises,
     createNewExercise,
     addExerciseLoad,
     deleteExerciseLoad,
-    deleteExercise
+    deleteExercise,
+
 
 }
