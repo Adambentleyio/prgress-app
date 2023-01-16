@@ -1,7 +1,7 @@
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSendLogoutMutation } from '../features/auth/authApiSlice'
 import { selectCurrentToken } from '../features/auth/authSlice'
 import { useSelector } from 'react-redux'
@@ -11,6 +11,9 @@ import  useAuth  from '../hooks/useAuth'
 export default function DashboardHeader() {
 
   const navigate = useNavigate()
+
+  // useAuth hook to check if manager, coach, client, or employee
+  const { isManager, isCoach, isAdmin } = useAuth()
 
   const [sendLogout, {
     isLoading,
@@ -24,16 +27,13 @@ export default function DashboardHeader() {
     // check isSuccess and when TRUE navigate to '/'
     useEffect(() => {
       if (isSuccess) navigate('/')
-    }, [isSuccess, Navigate])
+    }, [isSuccess, navigate])
 
   // early returns as soon as isLoading or isError occurs
 
   if (isLoading) return <p>Logging out...</p>
 
   if (isError) return <p>An error occured ➡ {err.data?.message}</p>
-
-  // useAuth hook to check if manager, coach, client, or employee
-  const { isManager, isCoach, isAdmin } = useAuth()
 
   let secondaryNav
 
