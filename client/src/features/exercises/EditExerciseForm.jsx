@@ -99,7 +99,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                 <div className="form__title-row">
                     <h2 className="text-lg font-bold text-indigo-600">{exercise.name}</h2>
                 </div>
-                <NewExerciseLoadForm id={exercise.id} />
+                <NewExerciseLoadForm id={exercise.id} user={exercise.user} />
                 <label className="form__label" htmlFor="note-title">
                     Title:</label>
                 <input

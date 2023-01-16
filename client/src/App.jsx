@@ -18,6 +18,7 @@ import RequireAuth from './features/auth/RequireAuth'
 import { ROLES } from './config/roles'
 import ExerciseList from './features/exercises/ExerciseList'
 import NewExercise from './features/exercises/NewExercise'
+import ExercisesDash from './features/exercises/ExercisesDash'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
             <Route path="exercises">
               <Route index element={<ExerciseList />} />
+              <Route path="dash" element={<ExercisesDash />} />
               <Route path=":id" element={<EditExercise />} />
               <Route path="new-exercise" element={<NewExercise />} />
             </Route>

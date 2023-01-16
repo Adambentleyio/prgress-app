@@ -111,6 +111,7 @@ const EditUserForm = ({ user }) => {
                 <div className="form__title-row">
                     <h2>Edit User</h2>
                     <div className="form__action-buttons">
+                        {/* Save edited user information */}
                         <button
                             className="icon-button"
                             title="Save"
@@ -119,6 +120,7 @@ const EditUserForm = ({ user }) => {
                         >
                             <FontAwesomeIcon icon={faSave} />
                         </button>
+                        {/* Delete user button */}
                         <button
                             className="icon-button"
                             title="Delete"

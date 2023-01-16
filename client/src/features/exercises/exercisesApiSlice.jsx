@@ -15,7 +15,32 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
             query: () => ({
                 url: '/exercises',
                 validateStatus: (response, result) => {
-                    return response.status === 200 && !result.ieError
+                    return response.status === 200 && !result.isError
+                }
+            }),
+            transformResponse: responseData => {
+                const loadedExercises = responseData.map(exercise => {
+                    exercise.id = exercise._id
+                    // exercise title and description sentence case
+                    // exercise.title = exercise.title.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+                    return exercise
+                });
+                return exercisesAdapter.setAll(initialState, loadedExercises)
+            },
+            providesTags: (result, error, arg) => {
+                if (result?.ids) {
+                    return [
+                        {type: 'Exercise', id: 'LIST'},
+                        ...result.ids.map(id => ({type: 'Exercise', id}))
+                    ]
+                } else return [{type: 'Exercise', id: 'LIST'}]
+            }
+        }),
+        getUsersExercises: builder.query({
+            query: (id) => ({
+                url: '/exercises/users',
+                validateStatus: (response, result) => {
+                    return response.status === 200 && !result.isError
                 }
             }),
             transformResponse: responseData => {
@@ -40,6 +65,16 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
             query: initialExerciseData => ({
                 url: '/exercises',
                 method: 'POST',
+                body: {...initialExerciseData}
+            }),
+            invalidatesTags: [
+                {type: 'Exercise', id: 'LIST'}
+            ]
+        }),
+        addExerciseLoad: builder.mutation({
+            query: initialExerciseData => ({
+                url: '/exercises/load',
+                method: 'PATCH',
                 body: {...initialExerciseData}
             }),
             invalidatesTags: [
@@ -81,7 +116,9 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
 
 export const {
     useGetExercisesQuery,
+    useGetUsersExercisesQuery,
     useAddNewExerciseMutation,
+    useAddExerciseLoadMutation,
     useUpdateExerciseMutation,
     useDeleteExerciseMutation,
 } = exercisesApiSlice

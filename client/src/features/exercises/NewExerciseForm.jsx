@@ -45,8 +45,6 @@ const NewExerciseForm = ({ users }) => {
 
     let id = users.filter(user => user.username === username).map(user => user.id).toString()
 
-    console.log(id)
-
     const onSaveNoteClicked = async (e) => {
         e.preventDefault()
         if (canSave) {

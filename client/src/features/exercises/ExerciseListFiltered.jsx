@@ -1,4 +1,4 @@
-import { useGetExercisesQuery } from "./exercisesApiSlice"
+import { useGetUsersExercisesQuery } from "./exercisesApiSlice"
 // import Exercise from './Exercise'
 import useAuth from "../../hooks/useAuth";
 import { PulseLoader } from 'react-spinners';
@@ -11,17 +11,23 @@ export default function ExercisesListFiltered() {
 
     // const { username, isManager, isAdmin } = useAuth();
 
+    //! UNDER CONSTRUCTION
+    //! UNSURE HOW TO CREATE GET REQUEST WITH USER ID PARAMS FOR MONGODB $MATCH
+
+    //! TEMP ID STRING FOR USEGETUSERSEXERCISEQUERY FUNCTION
+    const id = '6355142277c9f97adff7d784'
+
     const {
         data: exercises,
         isLoading,
         isSuccess,
         isError,
         error
-    } = useGetExercisesQuery('exercisesList', { /*options for listening and then dispatching new queries to redux store */
-        pollingInterval: 60000,
-        refetchOnFocus: true,
-        refetchOnMountOrArgChange: true
-    })
+    } = useGetUsersExercisesQuery(id, { /*options for listening and then dispatching new queries to redux store */
+    pollingInterval: 60000,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true
+})
 
     const handleEdit = (id) => navigate(`/dash/exercises/${id}`)
 

@@ -19,12 +19,12 @@ const getAllExercises = async (req, res) => {
 }
 
 const getUsersExercises = async (req, res) => {
-    const { user } = req.body
+    const { id } = req.body
 
     // find Exercises that match the user
     const exercises = await Exercise.aggregate([
         {
-            $match: { userById: mongoose.Types.ObjectId(user)}
+            $match: { userById: mongoose.Types.ObjectId(id)}
         }
     ])
 

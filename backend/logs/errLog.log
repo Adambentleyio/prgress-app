@@ -262,3 +262,21 @@
 20230116	12:04:09	6d37ec66-7993-497b-bcf4-2dec51ebc3be	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230116	12:04:30	2ede8593-92b4-4cbf-afa8-8bac055194fb	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230116	12:06:52	d0e07c52-ebac-42cd-87fd-06d1c25d6854	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:10:46	b2494d0c-726a-4b7d-897c-42a8aa13617d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:13:10	980798ad-f2b7-459b-b741-7c20f7b3ac8a	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:14:39	550ecb1a-ec0c-4c38-ad67-69177e798f86	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:14:39	5c846f1d-9e18-4f6f-a6fd-43c12e2e45da	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:20:47	316a371c-6251-4ce5-b58d-cd6934070dac	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:32:27	a0dadc12-df22-4601-9164-9f68c036e6d0	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:33:06	9e4a159f-6cb6-4ccb-8728-f51926d156ca	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:34:52	dcee55b8-7da7-4a22-ac17-6d7fc0458a4f	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:39:32	752cc139-9940-4a53-8d5c-dfc50b1b7342	ReferenceError: user is not defined	GET	/exercises/users	http://127.0.0.1:5173
+20230116	12:39:44	b2c4af10-f55a-489e-a828-33d3bbb63dfd	ReferenceError: user is not defined	GET	/exercises/users	http://127.0.0.1:5173
+20230116	12:40:12	a2d78b20-ec51-4341-ab6f-8b60a63157cd	ReferenceError: user is not defined	GET	/exercises/users	http://127.0.0.1:5173
+20230116	12:40:37	44a229b9-92d0-47d6-a120-57ffd5c629ff	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:58:02	4b0b3a9c-fed3-412b-8029-318aa03aa969	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:58:05	01473f5c-fa79-4b3c-b069-87fe50a514de	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	13:19:03	e1965d89-b28d-486f-93ba-35b41fa7fc1d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	13:19:04	3ce1d9df-9e3b-4802-9ecb-47e7d0d9dad5	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	13:20:37	4ea61e2d-77ea-403e-9364-ab4095a1060d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	13:20:38	7708741b-2a40-4ec8-9153-fb0ceb866ab4	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
