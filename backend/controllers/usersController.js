@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Note = require('../models/Note')
 const asyncHandler = require('express-async-handler')
 const bcrypt = require('bcrypt')
 
@@ -119,7 +120,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 
     const reply = `Username ${result.username} with ID ${result._id} deleted`
 
-    res.json(reply)
+    res.json({message: `${reply} - from backend`})
 })
 
 module.exports = {

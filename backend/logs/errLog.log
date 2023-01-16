@@ -236,3 +236,29 @@
 20230110	07:46:55	c1e978fb-8bc5-44c9-abc0-241348b076a6	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
 20230110	07:49:59	99a5a9bc-7c88-4664-903a-65062717236e	ValidationError: Exercise validation failed: user: Cast to ObjectId failed for value "hankhimself" (type string) at path "user" because of "BSONTypeError"	POST	/exercises	http://127.0.0.1:5173
 20230110	08:14:16	a9aea6fc-26bd-4b79-a640-44241cabe3b8	CastError: Cast to ObjectId failed for value "6399" (type number) at path "_id" for model "User"	POST	/exercises	http://127.0.0.1:5173
+20230115	14:57:42	dbe653d5-a590-410d-abcc-2a80a092961f	CastError: Cast to ObjectId failed for value "6355142277c9f97adff7d784,637df40c3653ab00b7191caf,637f417e4963c53ba7792f70" (type string) at path "_id" for model "User"	POST	/exercises	http://127.0.0.1:5173
+20230115	14:58:22	75b43758-f1b2-4598-b3c2-6b3758bbc49a	CastError: Cast to ObjectId failed for value "6355142277c9f97adff7d784,637df40c3653ab00b7191caf,637f417e4963c53ba7792f70" (type string) at path "_id" for model "User"	POST	/exercises	http://127.0.0.1:5173
+20230115	15:04:11	de0c4719-7bf6-4444-9891-2de53189918a	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5173
+20230115	15:08:00	7d6951e5-f8f6-4377-8ff9-e50c03ff52f1	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5173
+20230115	15:11:46	def835e7-fb32-4dac-9995-4a475100492e	ReferenceError: Note is not defined	DELETE	/users	http://127.0.0.1:5173
+20230115	15:19:24	4520adfe-f37d-41ba-b8a2-299215a313a8	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:26:22	334a64f9-afb0-4922-a727-a593ea3ece25	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:45:05	62adadab-5ff6-4fc9-9377-29b30f853e2d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:45:37	1e00df59-9c34-4d91-b9f7-0f903e6c3aad	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:50:52	d245ef58-aba1-475f-9327-c870eb4b5f50	ValidationError: Exercise validation failed: loads.0._id: Cast to ObjectId failed for value "200" (type string) at path "_id" because of "BSONTypeError"	PATCH	/exercises/load	http://127.0.0.1:5173
+20230115	17:51:30	256edb6b-eedc-4ce8-9d93-185cf55babc7	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:51:38	500163fb-8164-4dbe-b3de-eefb9d84380b	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:51:45	26a165b7-989c-487a-81a8-5e927abbb4da	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230115	17:51:49	b2ef3fdb-3b1e-4e2c-8ae6-0ae70d9919e7	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:07:04	47e36cbc-46d7-4968-8852-d6da3bc3c0e3	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:15:20	838a81c0-f13b-44e3-b93e-bb01d0f57ae1	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:15:28	96576f4c-20d2-408c-96c3-e448e23169ba	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:53:11	824286d5-3e54-41a9-bdb6-74fbd19a16c8	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:54:19	db0de063-925c-4bc7-8102-5dc823a01152	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	10:58:28	a4460095-e1d8-4408-9625-c0f2d2cde331	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	11:03:32	53d149dc-dfc1-46f1-a11f-5b6086ff67df	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	11:04:53	a49d8dd8-3b0b-4744-8352-d2702a8b9dbf	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	11:58:28	5c5d2570-ae4f-4d9f-a876-9b888940a21e	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:04:09	6d37ec66-7993-497b-bcf4-2dec51ebc3be	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:04:30	2ede8593-92b4-4cbf-afa8-8bac055194fb	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230116	12:06:52	d0e07c52-ebac-42cd-87fd-06d1c25d6854	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
