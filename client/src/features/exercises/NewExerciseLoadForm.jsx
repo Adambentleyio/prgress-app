@@ -27,9 +27,6 @@ const NewExerciseLoadForm = ({id, user}) => {
   useEffect(() => {
 
     if (isSuccess || isSuccess) {
-        setName('')
-        setDescription('')
-        setUserId('')
         navigate('/dash/exercises')
     }
 
@@ -38,7 +35,7 @@ const NewExerciseLoadForm = ({id, user}) => {
     return (
     <div>
     <div>
-      <label htmlFor="price" className="block font-medium">
+      <label onSubmit={e => e.preventDefault() } className="block font-medium">
         Load
       </label>
       <div className="relative inline rounded-md shadow-sm">
@@ -57,8 +54,8 @@ const NewExerciseLoadForm = ({id, user}) => {
             Kg
           </span>
         </div>
-        <button disabled={!canSave} onClick={onAddExerciseLoadClicked}>Click me</button>
       </div>
+        <button className='mx-2 py-2 px-4 bg-white rounded-md border-gray-300 font-medium text-indigo-700 disabled:text-gray-500 disabled:opacity-25' disabled={!canSave} onClick={onAddExerciseLoadClicked}>Add</button>
     </div>
     </div>
   )
