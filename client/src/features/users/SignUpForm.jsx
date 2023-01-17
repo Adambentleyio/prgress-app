@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useAddNewUserMutation } from './usersApiSlice';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ROLES } from '../../config/roles';
 import { delay } from '../../config/delay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -93,7 +93,7 @@ const errClass = isError ? "errmsg" : "offscreen"
 
 return (
     <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-        {isSuccess && <p className="successmsg">User successfully added. <a href="/login">Login here</a></p>}
+        {isSuccess && <p className="successmsg">User successfully added. <Link to="/login">Login here</Link></p>}
         <p className={errClass}>{error?.data?.message}</p>
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -101,18 +101,15 @@ return (
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt="Your Company"
           />
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-300">Sign in to your account</h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-              start your 14-day free trial
-            </a>
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-300">Register your account today</h2>
+          <p className="mt-2 text-center text-sm text-gray-100">
+            Or use the username<strong className='text-indigo-600 inline'> hank</strong> and password: <strong className='text-indigo-600 inline'>hank123</strong> to login.
           </p>
         </div>
         {/* Sign up Form */}
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" onSubmit={onSaveUserClicked}>
+        <div className="py-12 self-center sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="mx-auto max-w-2xl py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <form className="space-y-6 " onSubmit={onSaveUserClicked}>
               <div>
                 <label htmlFor="username" className="block text-sm font-medium text-gray-300">
                   Username
