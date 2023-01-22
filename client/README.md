@@ -6,4 +6,4 @@ The app was deployed January 17th and is a working in progress. A product roadma
 
 ### [Live Demo](https://www.prgress.onrender.com)
 
-The backend is hosted at https://prgress-api.onrender.com.
+The backend is hosted at https://prgress-api.onrender.com

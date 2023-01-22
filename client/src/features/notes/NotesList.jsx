@@ -31,7 +31,7 @@ const NotesList = () => {
     }
 
     if (isSuccess) {
-
+      console.log("successful notes retrieval")
         const { ids, entities } = notes
 
         let filteredIds

@@ -1,4 +1,5 @@
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faUser} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -6,6 +7,7 @@ import { useSendLogoutMutation } from '../features/auth/authApiSlice'
 import { selectCurrentToken } from '../features/auth/authSlice'
 import { useSelector } from 'react-redux'
 import  useAuth  from '../hooks/useAuth'
+import Popover from '../components/dashPopover'
 
 
 export default function DashboardHeader() {
@@ -41,13 +43,13 @@ export default function DashboardHeader() {
     secondaryNav = (
       <>
         <div className='flex space-x-2'>
-        <Link to="/dash/exercises" className=" font-medium hover:text-indigo-50"><p>Exercises</p></Link>
+        <Link to="/dash/exercises/filtered" className=" font-medium hover:text-indigo-50"><p>Tracked</p></Link>
+        <span>|</span>
+        <Link to="/dash/exercises" className=" font-medium hover:text-indigo-50"><p>Exercise List</p></Link>
+        <span>|</span>
         <Link to="/dash/notes/new-note" className=" font-medium hover:text-indigo-50"><p>New Log</p></Link>
-        <Link to="/dash/notes" className=" font-medium hover:text-indigo-50"><p>Journal</p></Link>
-        </div>
-        <div className='flex space-x-2'>
-          <Link to="/dash/users" className="font-medium hover:text-indigo-50"><p>All Users</p></Link>
-          <Link to="/dash/users/new-user" className="font-medium hover:text-indigo-50"><p>Add New User</p></Link>
+        <span>|</span>
+        <Link to="/dash/notes" className=" font-medium hover:text-indigo-50"><p>Journals</p></Link>
         </div>
     </>
     )
@@ -59,12 +61,24 @@ export default function DashboardHeader() {
     )
   }
 
+  const popOverData = {
+    logout: {
+      func: () => sendLogout(),
+      title: "Logout"
+    },
+    users: {
+      func: () => navigate('/dash/users'),
+      title: "Users"
+  }
+}
 
   const logoutButton = (
-    <button className="icon-button" onClick={sendLogout}>
-      <FontAwesomeIcon icon={faRightFromBracket} />
-    </button>
+    <Popover
+    logout={popOverData.logout}
+     users={popOverData.users}
+  />
   )
+
   const loginButton = (
     <button className="icon-button">
       <Link to='/login'>Login</Link>
@@ -78,10 +92,10 @@ export default function DashboardHeader() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
           <div className="flex items-center">
-            <a href="#">
+            <Link to="/dash">
               <span className="sr-only">PRGRESS</span>
               <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
-            </a>
+            </Link>
             <div className="hidden ml-10 space-x-8 lg:flex lg:items-center">
               {secondaryNav}
 

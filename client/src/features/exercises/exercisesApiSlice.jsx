@@ -38,7 +38,7 @@ export const exercisesApiSlice = apiSlice.injectEndpoints({
         }),
         getUsersExercises: builder.query({
             query: (id) => ({
-                url: '/exercises/users',
+                url: `/exercises/${id}`,
                 validateStatus: (response, result) => {
                     return response.status === 200 && !result.isError
                 }
@@ -134,5 +134,5 @@ export const {
     selectAll: selectAllExercises,
     selectById: selectExerciseById,
     selectIds: selectExercisesIds
-    // Pass in a selector that returns the notes slice of state
+    // Pass in a selector that returns the exercises slice of state
 } = exercisesAdapter.getSelectors(state => selectExercisesData(state) ?? initialState)

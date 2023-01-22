@@ -1,15 +1,22 @@
-import { useGetExercisesQuery } from "./exercisesApiSlice"
+import { useAddNewExerciseMutation, useGetExercisesQuery } from "./exercisesApiSlice"
 // import Exercise from './Exercise'
 import useAuth from "../../hooks/useAuth";
 import { PulseLoader } from 'react-spinners';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useGetUsersQuery } from "../users/usersApiSlice";
+
 
 export default function ExercisesList() {
 
     const { username, isManager, isAdmin } = useAuth();
     const navigate = useNavigate();
 
-    // const { username, isManager, isAdmin } = useAuth();
+    const { users } = useGetUsersQuery('usersList', {
+      selectFromResult: ({ data }) => ({
+          users: data?.ids.map(id => data?.entities[id])
+      })
+    })
 
     const {
         data: exercises,
@@ -22,6 +29,23 @@ export default function ExercisesList() {
         refetchOnFocus: true,
         refetchOnMountOrArgChange: true
     })
+
+    useEffect(() => {
+      if (addExerciseIsSuccess) {
+        navigate('/dash/exercises/filtered')
+      }
+    })
+
+    const [addNewExercise, {
+      isLoading: addExerciseIsLoading,
+      isSuccess: addExerciseIsSuccess,
+    }] = useAddNewExerciseMutation()
+
+    const userById = users?.find(user => user.username === username)?.id
+
+    const onTrackExerciseClicked = async (exerciseName) => {
+      await addNewExercise({ name:exerciseName, user: username, id: userById })
+    }
 
     const handleEdit = (id) => navigate(`/dash/exercises/${id}`)
 
@@ -66,15 +90,9 @@ export default function ExercisesList() {
                     <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-300 sm:pl-6">
                       Name
                     </th>
-                    <th
-                      scope="col"
-                      className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-300 lg:table-cell"
-                    >
-                      Description
-                    </th>
 
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-300">
-                      Latest
+                      Description
                     </th>
                     <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
                       <span className="sr-only">Edit</span>
@@ -95,14 +113,21 @@ export default function ExercisesList() {
                           {/* <dd className="mt-1 truncate text-gray-300 sm:hidden">{entities[exerciseId].id}</dd> */}
                         </dl>
                       </td>
-                      <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entry.description}</td>
+                      {/* <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entry.description || "-"}</td> */}
                       {/* // latest load */}
-                      <td className="px-3 py-4 text-sm text-gray-300">{entry.loads.length? entry.loads[0].load : "-"}</td>
-                      <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <button onClick={() => handleEdit(entities[exerciseId].id)} className="text-indigo-600 hover:text-indigo-900">
+                      <td className="px-3 py-4 text-sm text-gray-300">{entry.description}</td>
+                      <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 space-x-2">
+                        {isAdmin || isManager && (
+                          <button onClick={() => handleEdit(entities[exerciseId].id)} className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium text-white shadow-sm hover:cursor-pointer hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
                           Edit<span className="sr-only">, {entities[exerciseId].name}</span>
                         </button>
+                        ) }
+
+                        <button onClick={() => onTrackExerciseClicked(entities[exerciseId].name)} className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+                          Track<span className="sr-only">, {entities[exerciseId].name}</span>
+                        </button>
                       </td>
+
                     </tr>
                   )})}
                 </tbody>

@@ -26,20 +26,20 @@ const DashboardFooter = () => {
   }
 
   return (
-    <footer className='bg-indigo-700'>
-      <div className="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
-          <div className="flex items-center">
+    <footer className='bg-indigo-900'>
+      <div className="flex w-full border-b border-indigo-500 lg:border-none">
+          <div>
             <Link to="/dash" className='mx-4'>
               <span className="sr-only">PRGRESS</span>
               <img className="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
             </Link>
             {/* Large screens secondary Nav */}
             <div className="hidden ml-10 space-x-8 lg:flex">
-              {secondaryNav}
+              {/* {secondaryNav} */}
             </div>
             {/* Small screens secondary Nav */}
             <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
-              {secondaryNav}
+              {/* {secondaryNav} */}
             </div>
           </div>
         </div>

@@ -8,18 +8,26 @@ const mongoose = require('mongoose')
 // @access Private
 
 const getAllExercises = async (req, res) => {
-    const exercises = await Exercise.find().lean()
+    const exercises = await Exercise.find().select('-userById').lean()
 
     if (!exercises?.length) {
         return res.status(400).json({message: "We can't find any exercises"})
     }
 
-    return res.json(exercises)
+    // make a map with only unique exercise names
+    const uniqueExercises = [...new Map(exercises.map(item => [item['name'], item])).values()]
+
+    return res.json(uniqueExercises)
+
 
 }
 
+//@route GET /exercises/:id
+
 const getUsersExercises = async (req, res) => {
-    const { id } = req.body
+
+    // get the id from the url
+    const { id } = req.params
 
     // find Exercises that match the user
     const exercises = await Exercise.aggregate([
@@ -39,6 +47,8 @@ const getUsersExercises = async (req, res) => {
 // @Desc create an exercise
 // @route POST /exercises
 // @access Private
+// @requires user, id, name
+// @optional description, load
 
 const createNewExercise = async (req, res) => {
     const { user, id, name, description, load } = req.body
@@ -47,32 +57,33 @@ const createNewExercise = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).json({ msg: `No objectId in the database with id :${id}` });
 
-    // find user
+    // find user by username string
     const userIsValid = await User.findOne({user})
+
     if (!userIsValid) {
         return res.status(404).json({ msg: `No user with name : ${user}` });
     }
 
-    // Confirm data
+    // Confirm data of username by string and exercise name by string
     if (!user || !name) {
         return res.status(400).json({ message: 'Make sure you are logged in and provide an exercise name' })
-    }
-
-    // Check for duplicate title
-    const duplicate = await Exercise.findOne({ name }).collation({locale: 'en', strength: 2}).lean().exec()
-
-    if (duplicate) {
-        return res.status(409).json({ message: 'Duplicate exercise title' })
     }
 
     // find User in mongodb and store its objectId
     const userById = await User.findById(id).lean().exec()
 
+    // Check for duplicate entry for user
+    const duplicate = await Exercise.findOne({ name }).collation({locale: 'en', strength: 2}).lean().exec()
+
+    if (duplicate && duplicate.userById === userById) {
+        return res.status(409).json({ message: 'Duplicate exercise title' })
+    }
+
     if (!userById) {
         return res.status(404).json({ msg: `No user with id : ${user}` });
     }
 
-    // Create and store the new user
+    // Create and store the new exercise
     const newExercise = await Exercise.create({ userById, name, description, load })
 
     if (newExercise) { // Created

@@ -280,3 +280,54 @@
 20230116	13:19:04	3ce1d9df-9e3b-4802-9ecb-47e7d0d9dad5	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230116	13:20:37	4ea61e2d-77ea-403e-9364-ab4095a1060d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230116	13:20:38	7708741b-2a40-4ec8-9153-fb0ceb866ab4	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:08:49	1836b831-04b3-4b2a-8216-f51a4518d293	SyntaxError: Unexpected token / in JSON at position 65	GET	/exercises/6355142277c9f97adff7d784	undefined
+20230120	20:08:55	09f2727e-9f27-4b52-aa6d-a4a8691d8d33	SyntaxError: Unexpected token } in JSON at position 68	GET	/exercises/6355142277c9f97adff7d784	undefined
+20230120	20:08:59	a4bb0544-7616-4e35-9ac6-7363f307e3f7	Error: Cannot set headers after they are sent to the client	GET	/exercises/6355142277c9f97adff7d784	undefined
+20230120	20:12:00	ff3509fd-d49e-494f-b39a-32d3b6aa2881	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:12:02	2ad89ae4-80b8-43da-91c5-6957b950094f	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:12:08	021c3177-106d-465e-8003-bc287562eebc	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:13:19	a956ee86-1dfb-47db-85dc-e1b46bcd5aa5	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:14:00	fee8c55f-ba3b-4305-b6a5-123c671539d6	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:14:08	dd7b9097-c5bd-4b12-a30d-37fde8b8e176	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:14:12	f9b287b1-0eda-4b7d-b20e-fb21f53f91ca	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:14:49	5cfbdab3-0e0b-4e80-a4b2-2922408596fb	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	20:14:54	42a22e88-63ad-4873-b92b-19f6a47d1f47	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:18:37	4cb3cf44-8705-4a61-b0b1-a0978e73fb0c	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:26:55	e266b033-b36f-4d3d-a294-a613e51f5c68	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:27:25	2b7eb3e3-bf1d-445d-b4c3-dd82dbd9f365	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:38:00	a07a48df-6afc-4dcc-b049-7b680fdfb5b5	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:38:20	90c38c9f-3986-4cac-84bf-25b2d3d0f0c7	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:38:31	71209dd3-e0fa-4d8a-a430-1c1f6f08b573	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:45:42	0d15a611-57e1-49a5-8cf4-640becbcb383	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	21:51:23	b5ffd994-e5b0-4a57-b0e1-7cf7d72f90da	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:06:54	04ab0c88-6c89-45b2-b5f3-509079e39f57	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:07:23	8f078957-fe59-4962-8b60-ec6ed0946c32	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:08:19	34f7589c-29ae-47df-a342-0a0846f6fc62	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:08:25	d1b77270-72dd-4a03-bdd3-edc5ff48847b	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:08:27	5005fc42-b3ac-4aab-aa4d-24d6f039020e	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:09:16	b77e90a0-83f7-470d-85fb-5efad387c7b8	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:09:19	190ecdfc-2e20-4f34-8454-0c2dfd45f839	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:09:51	f9d5418a-d18a-4167-abce-afbb2cdc38e2	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:09:51	7f270983-eb67-41f7-8231-0368b681286b	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230120	22:10:22	bc2d6427-feab-4174-843a-dc60dd441db0	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	10:45:31	7b746b77-0a2b-4eb7-9158-b3d838e68b73	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	10:51:39	e39a229e-783e-4134-8e32-1687aaba29a7	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	10:56:37	27d93eda-07a0-4932-8572-81555d15ad82	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	10:59:03	3e5c51f6-686c-4eb5-a3ee-5395846edaf4	TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))	GET	/exercises	undefined
+20230122	10:59:23	55c7edc8-6719-40af-a0e7-f18bc12cd2dd	TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))	GET	/exercises	http://127.0.0.1:5173
+20230122	11:01:25	7d48ad4f-0909-4305-9203-6318f52d6267	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:01:26	66c4f739-9445-4dda-a69c-adba31364d20	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:02:11	58cac5ca-7177-4ade-af27-1abba6ce00ce	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:02:12	bed20fb2-a865-4a70-ac83-9658f1d20a3f	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:08:26	bb324a44-b470-45ea-9ada-aa3144ac8dd4	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:08:26	ac315e87-5255-46ff-bb3f-80c4e5526a96	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:08:52	8667eb0a-926a-4b8f-8ed9-07270e8fae7b	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	12:09:56	ede63a37-6aac-4c67-b69a-ee8642bf2112	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	13:03:18	491de340-3002-4eda-a6d9-e00d0c697b5a	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20230122	13:04:48	d874ff4a-a5a7-4e27-b651-7769f5bb8837	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	http://127.0.0.1:5173
+20230122	13:13:21	9b2a3d58-8753-4749-bbab-8938e69865d3	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	13:19:20	b1d2f519-9cca-4267-b4c1-ed27dee221d6	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	13:20:34	794bcd16-f76a-4526-8a95-95cd5e1ee61a	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	13:23:44	04f3ee3a-81af-44de-9368-cc4b6ec50b4d	Error: Invalid select: select only takes 1 argument	GET	/exercises	undefined
+20230122	13:25:30	af8b3bb5-79af-4670-94ab-d7f16b814e73	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230122	13:40:27	5cb28633-82c3-4114-8e4e-fcdaaa54fb04	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173

@@ -19,7 +19,8 @@ router.route('/load')
 .delete(exercisesController.deleteExerciseLoad)
 .patch(exercisesController.addExerciseLoad)
 
-router.route('/users')
+// @route /exercises/:id
+router.route('/:id')
 .get(exercisesController.getUsersExercises)
 
 module.exports = router

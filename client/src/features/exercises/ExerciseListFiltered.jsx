@@ -3,6 +3,7 @@ import { useGetUsersExercisesQuery } from "./exercisesApiSlice"
 import useAuth from "../../hooks/useAuth";
 import { PulseLoader } from 'react-spinners';
 import { useNavigate } from "react-router-dom";
+import { useGetUsersQuery } from "../users/usersApiSlice";
 
 export default function ExercisesListFiltered() {
 
@@ -15,7 +16,13 @@ export default function ExercisesListFiltered() {
     //! UNSURE HOW TO CREATE GET REQUEST WITH USER ID PARAMS FOR MONGODB $MATCH
 
     //! TEMP ID STRING FOR USEGETUSERSEXERCISEQUERY FUNCTION
-    const id = '6355142277c9f97adff7d784'
+    const { users } = useGetUsersQuery('usersList', {
+      selectFromResult: ({ data }) => ({
+          users: data?.ids.map(id => data?.entities[id])
+      })
+    })
+
+    const id = users?.find(user => user.username === username)?.id
 
     const {
         data: exercises,
@@ -23,12 +30,13 @@ export default function ExercisesListFiltered() {
         isSuccess,
         isError,
         error
-    } = useGetUsersExercisesQuery(id, { /*options for listening and then dispatching new queries to redux store */
-    pollingInterval: 60000,
-    refetchOnFocus: true,
-    refetchOnMountOrArgChange: true
-})
+    } = useGetUsersExercisesQuery(id)
 
+//     { /*options for listening and then dispatching new queries to redux store */
+//     pollingInterval: 60000,
+//     refetchOnFocus: true,
+//     refetchOnMountOrArgChange: true
+// }
     const handleEdit = (id) => navigate(`/dash/exercises/${id}`)
 
     let content
