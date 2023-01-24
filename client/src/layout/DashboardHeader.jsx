@@ -8,6 +8,7 @@ import { selectCurrentToken } from '../features/auth/authSlice'
 import { useSelector } from 'react-redux'
 import  useAuth  from '../hooks/useAuth'
 import Popover from '../components/dashPopover'
+import ProfileDashMenu from '../components/ProfileDashMenu'
 
 
 export default function DashboardHeader() {
@@ -68,7 +69,7 @@ export default function DashboardHeader() {
     },
     users: {
       func: () => navigate('/dash/users'),
-      title: "Users"
+      title: "People"
   }
 }
 
@@ -90,22 +91,25 @@ export default function DashboardHeader() {
     <>
     <header className="bg-base md:mb-6">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+        {/* Main block nav */}
         <div className="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
           <div className="flex items-center">
             <Link to="/dash">
               <span className="sr-only">PRGRESS</span>
               <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" />
             </Link>
+            {/* large screens div */}
             <div className="hidden ml-10 space-x-8 lg:flex lg:items-center">
               {secondaryNav}
-
             </div>
           </div>
           <div className="ml-10 space-x-4">
             {!token && loginButton}
-            {logoutButton}
+            {/* {logoutButton} */}
+            <ProfileDashMenu logout={popOverData.logout} users={popOverData.users} />
           </div>
         </div>
+        {/* Small screens div under main nav  */}
         <div className="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
           {secondaryNav}
         </div>
