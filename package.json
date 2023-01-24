@@ -1,1 +1,6 @@
-{}
+{
+  "devDependencies": {
+    "@testing-library/dom": "^8.20.0",
+    "msw": "^0.49.3"
+  }
+}
