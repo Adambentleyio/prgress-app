@@ -91,6 +91,8 @@ const EditExerciseForm = ({ exercise, users }) => {
         )
     }
 
+    console.log(exercise)
+
     const content = (
         <>
             <p className={errClass}>{errContent}</p>
@@ -99,7 +101,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                 <div className="form__title-row">
                     <h2 className="text-lg font-bold text-indigo-600">{exercise.name}</h2>
                 </div>
-                <NewExerciseLoadForm id={exercise.id} user={exercise.user} />
+                <NewExerciseLoadForm id={exercise.id} user={exercise.userById} />
                 <label className="form__label" htmlFor="note-title">
                     Title:</label>
                 <input

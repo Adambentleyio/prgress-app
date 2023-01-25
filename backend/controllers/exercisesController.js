@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 // @access Private
 
 const getAllExercises = async (req, res) => {
-    const exercises = await Exercise.find().select('-userById').lean()
+    const exercises = await Exercise.find().lean()
 
     if (!exercises?.length) {
         return res.status(400).json({message: "We can't find any exercises"})
@@ -98,7 +98,7 @@ const createNewExercise = async (req, res) => {
 // @route PATCH /exercises/load
 // @access Private
 const addExerciseLoad = async (req, res) => {
-    const { id, user, load } = req.body
+    const { id, user, load, reps, note } = req.body
 
     // Confirm data
     if (!id || !user || !load) {
@@ -112,7 +112,9 @@ const addExerciseLoad = async (req, res) => {
         return res.status(400).json({ message: 'Note not found' })
     }
 
-    let updatedExercise = exercise.loads.push(load)
+    const newLoad = {load, reps, note}
+
+    let updatedExercise = exercise.loads.push(newLoad)
 
     updatedExercise = await exercise.save()
 
