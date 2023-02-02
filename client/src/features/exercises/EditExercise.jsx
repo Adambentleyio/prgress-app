@@ -17,6 +17,8 @@ const EditExercise = () => {
         })
     })
 
+    console.log('exercise', exercise)
+
     const {users} = useGetUsersQuery('usersList', {
         selectFromResult: ({ data }) => ({
             users: data?.ids.map(id => data?.entities[id])

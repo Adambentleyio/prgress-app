@@ -15,7 +15,10 @@ const exerciseSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    loads: [{load: Number, reps: Number, note: String, date: {type: Date, default: Date.now}}]
+    loads: {
+        type: [{load: Number, reps: Number, note: String, date: {type: Date, default: Date.now}}],
+        required: false
+    },
 })
 
 module.exports = mongoose.model('Exercise', exerciseSchema)

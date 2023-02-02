@@ -10,12 +10,6 @@ export default function ExercisesListFiltered() {
     const { username, isManager, isAdmin } = useAuth();
     const navigate = useNavigate();
 
-    // const { username, isManager, isAdmin } = useAuth();
-
-    //! UNDER CONSTRUCTION
-    //! UNSURE HOW TO CREATE GET REQUEST WITH USER ID PARAMS FOR MONGODB $MATCH
-
-    //! TEMP ID STRING FOR USEGETUSERSEXERCISEQUERY FUNCTION
     const { users } = useGetUsersQuery('usersList', {
       selectFromResult: ({ data }) => ({
           users: data?.ids.map(id => data?.entities[id])
@@ -31,6 +25,7 @@ export default function ExercisesListFiltered() {
         isError,
         error
     } = useGetUsersExercisesQuery(id)
+
 
 //     { /*options for listening and then dispatching new queries to redux store */
 //     pollingInterval: 60000,
@@ -53,15 +48,13 @@ export default function ExercisesListFiltered() {
 
         const { ids, entities } = exercises
 
-
             return (
             <div className="px-4 sm:px-6 lg:px-8">
-            <div className="sm:flex sm:items-center">
+            <div className="sm:flex sm:items-end">
               <div className="sm:flex-auto">
-                <h1 className="text-xl font-semibold text-gray-300">Exercises</h1>
-                <p className="mt-2 text-sm text-gray-300">
-                A list of all exercises in your account. You can edit or delete exercises.
-                </p>
+              <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Your lifts</h1>
+                <p className="mt-2 text-sm text-gray-300">Add new attempts and personal records to your list of exercises by clicking edit.</p>
+                <p className="mt-2 text-sm text-gray-300 max-w-sm">Qucik load coming soon</p>
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <button

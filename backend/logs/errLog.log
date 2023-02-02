@@ -387,3 +387,25 @@
 20230124	15:37:31	ab486990-8900-4cb8-9370-df3d47c90b3d	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230124	15:38:30	a0c6e018-de8f-48ec-b4c7-6127b25c8349	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
 20230124	15:38:32	c6b5c07a-7e33-41d8-9bad-5f60e8de7c56	TypeError: Cannot read properties of null (reading 'username')	GET	/notes	http://127.0.0.1:5173
+20230201	12:55:16	630bf465-eabc-41bf-a706-60d48b78b37d	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20230201	12:56:10	036ea1ef-e1b1-45cb-96b4-bd01762e0deb	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20230201	12:57:10	4ee595bd-fc6c-47bb-9003-36290d5c91a0	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20230201	13:00:30	766bf9b7-6188-40bd-b186-d8d3955913e2	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	POST	/auth	http://127.0.0.1:5173
+20230201	13:00:50	f164d441-34e9-43fa-a8ad-eb72d757abd9	MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/	GET	/exercises	undefined
+20230202	12:07:41	16a6f494-d967-40c9-ad8f-7c4237bebb74	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230202	12:17:31	fa64e4ec-0765-4931-9d58-d70a53a29c54	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:17:39	cb738bd6-b9bb-459f-b7a3-3ba16d603efd	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:17:46	fa6d8b6c-4e45-457f-9a61-db2f9a3cbcba	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:17:52	28e45ed0-623c-43d6-afc4-7b26f5f90dc9	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:18:08	945f389c-75ff-490c-b9ff-572a63e9d40d	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:18:28	d6bfad33-893d-4d9a-8a70-c3d34629531c	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:18:29	a8d8a9b2-ca0e-4d75-b153-85b8f3c3ffef	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:18:31	e72eb0f1-4330-4710-8179-93783aef3d6c	TypeError: uniqueExercises.filte is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:22:53	a843b16f-95ff-47b2-9570-8c387f752766	TypeError: array.push is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:22:57	ed8e3b69-7ccb-4b8c-b270-2a58b7ebbb18	TypeError: array.push is not a function	GET	/exercises	http://127.0.0.1:5173
+20230202	12:35:52	0b29b452-4428-47fb-9beb-35d9e28bd828	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
+20230202	12:35:56	a15918bc-c229-4579-8c90-de1684e2adaf	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
+20230202	12:36:10	fc625172-5d22-4774-94d8-829f1216ac47	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
+20230202	12:36:13	c59e75bd-8dfb-4be1-b3fd-27024154640f	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
+20230202	12:36:25	5c09e30a-07b7-4b02-a27e-80db8837c4c0	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
+20230202	13:00:42	1a9a29a4-3992-4343-ace5-9c1c9a4dde48	ReferenceError: uniqueExercises is not defined	GET	/exercises	http://127.0.0.1:5173

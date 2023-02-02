@@ -66,12 +66,13 @@ export default function ExercisesList() {
 
             return (
             <div className="px-4 sm:px-6 lg:px-8">
-            <div className="sm:flex sm:items-center">
+            <div className="sm:flex sm:items-end">
               <div className="sm:flex-auto">
-                <h1 className="text-xl font-semibold text-gray-300">Exercises</h1>
-                <p className="mt-2 text-sm text-gray-300">
-                A list of all exercises in your account. You can edit or delete exercises.
+                <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Exercises</h1>
+                <p className="mt-2 font-semibold text-gray-100">
+                All exercises in the database.
                 </p>
+                <p className="mt-2 text-sm text-gray-300 max-w-sm">You can add an exercise to your list by clicking track, or add new exercises.</p>
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <button
@@ -103,7 +104,7 @@ export default function ExercisesList() {
                   {ids.map((exerciseId) => {
                     const entry = entities[exerciseId]
                     return (
-                    <tr key={entities[exerciseId].name}>
+                    <tr key={entities[exerciseId].id}>
                       <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-300 sm:w-auto sm:max-w-none sm:pl-6">
                         {entities[exerciseId].name}
                         <dl className="font-normal lg:hidden">
@@ -116,8 +117,8 @@ export default function ExercisesList() {
                       {/* <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entry.description || "-"}</td> */}
                       {/* // latest load */}
                       <td className="px-3 py-4 text-sm text-gray-300">{entry.description}</td>
-                      <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 space-x-2">
-                        {isAdmin || isManager && (
+                      <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 space-y-2 md:space-x-2 md:space-y-0">
+                        {isAdmin | isManager && (
                           <button onClick={() => handleEdit(entities[exerciseId].id)} className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium text-white shadow-sm hover:cursor-pointer hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
                           Edit<span className="sr-only">, {entities[exerciseId].name}</span>
                         </button>

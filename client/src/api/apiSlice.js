@@ -1,9 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from "../features/auth/authSlice";
 
+const API_ENDPOINT = process.env.NODE_ENV === 'production' ? 'https://prgress-api.onrender.com' : 'http://localhost:5000'
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://prgress-api.onrender.com',
-  // baseUrl: 'http://localhost:5000',
+  // if production baseUrl is https://prgress-api.onrender.com, else http://localhost:5000
+    // baseUrl: 'https://prgress-api.onrender.com',
+  baseUrl: API_ENDPOINT,
   credentials: 'include',
   prepareHeaders: (headers, {getState}) => {
 

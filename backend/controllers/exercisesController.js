@@ -14,10 +14,7 @@ const getAllExercises = async (req, res) => {
         return res.status(400).json({message: "We can't find any exercises"})
     }
 
-    // make a map with only unique exercise names
-    const uniqueExercises = [...new Map(exercises.map(item => [item['name'], item])).values()]
-
-    return res.json(uniqueExercises)
+    return res.json(exercises)
 
 
 }
@@ -92,6 +89,32 @@ const createNewExercise = async (req, res) => {
         return res.status(400).json({ message: 'Invalid exercise data received' })
     }
 
+}
+
+// @desc Update a user exercise
+// @route PATCH /exercises
+// @access Private
+const updateUserExercise = async (req, res) => {
+    const { id, user, name, description } = req.body
+
+    // Confirm data
+    if (!id || !user || !name) {
+        return res.status(400).json({ message: 'All fields are required' })
+    }
+
+    // Confirm note exists to update
+    const exercise = await Exercise.findById(id).exec()
+
+    if (!exercise) {
+        return res.status(400).json({ message: 'Note not found' })
+    }
+
+    exercise.name = name
+    exercise.description = description
+
+    const updatedExercise = await exercise.save()
+
+    res.json(`'${updatedExercise}' updated`)
 }
 
 // @desc Update an exercise with new load
@@ -193,6 +216,7 @@ module.exports = {
     getAllExercises,
     getUsersExercises,
     createNewExercise,
+    updateUserExercise,
     addExerciseLoad,
     deleteExerciseLoad,
     deleteExercise,

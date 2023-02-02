@@ -8,7 +8,7 @@ import NewExerciseLoadForm from "./NewExerciseLoadForm"
 
 const EditExerciseForm = ({ exercise, users }) => {
 
-    const { isManager, isAdmin } = useAuth()
+    const { isAdmin } = useAuth()
 
     const [updateExercise, {
         isLoading,
@@ -25,21 +25,21 @@ const EditExerciseForm = ({ exercise, users }) => {
 
     const navigate = useNavigate()
 
-    const [name, setName] = useState(exercise.name)
-    const [description, setDescription] = useState(exercise.description)
-    // const [completed, setCompleted] = useState(exercise.completed)
-    const [userId, setUserId] = useState(exercise.user)
-
     useEffect(() => {
-
         if (isSuccess || isDelSuccess) {
             setName('')
             setDescription('')
             setUserId('')
             navigate('/dash/exercises')
         }
-
     }, [isSuccess, isDelSuccess, navigate])
+
+
+    const [name, setName] = useState(exercise.name)
+    const [description, setDescription] = useState(exercise.description)
+    const [userId, setUserId] = useState(exercise.userById)
+
+
 
     const onTitleChanged = e => setName(e.target.value)
     const onTextChanged = e => setDescription(e.target.value)
@@ -49,6 +49,7 @@ const EditExerciseForm = ({ exercise, users }) => {
 
     const onSaveNoteClicked = async (e) => {
         if (canSave) {
+            console.log("can save and is awaiting...")
             await updateExercise({ id: exercise.id, user: userId, name, description })
         }
     }
@@ -71,27 +72,25 @@ const EditExerciseForm = ({ exercise, users }) => {
         )
     })
 
+    const btnAdminClass = `h-8 transition-scale duration-50 ease-in hover:scale-90`
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
     const validTitleClass = !name ? "form__input--incomplete" : ''
     const validTextClass = !description ? "form__input--incomplete" : ''
 
     const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
 
-
     let deleteButton = null
-    if (isManager || isAdmin) {
+    if (isAdmin) {
         deleteButton = (
             <button
                 className="icon-button"
                 title="Delete"
                 onClick={onDeleteNoteClicked}
             >
-                <FontAwesomeIcon icon={faTrashCan} />
+                <FontAwesomeIcon className={`${btnAdminClass}`} icon={faTrashCan} />
             </button>
         )
     }
-
-    console.log(exercise)
 
     const content = (
         <>
@@ -124,7 +123,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                     onChange={onTextChanged}
                 />
                 <div className="form__row">
-                    <div className="form__divider">
+                    {/* <div className="form__divider">
 
                         <label className="form__label form__checkbox-container" htmlFor="note-username">
                             ASSIGNED TO:</label>
@@ -137,11 +136,11 @@ const EditExerciseForm = ({ exercise, users }) => {
                         >
                             {options}
                         </select>
-                    </div>
-                    <div className="form__divider">
+                    </div> */}
+                    {/* <div className="form__divider">
                         <p className="form__created">Created:<br />{dateConverter(exercise.createdAt)}</p>
                         <p className="form__updated">Updated:<br />{dateConverter(exercise.updatedAt)}</p>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex space-x-4">
                     <ul>
@@ -168,12 +167,11 @@ const EditExerciseForm = ({ exercise, users }) => {
                 </div>
                 <div className="space-x-3">
                         <button
-                            className="icon-button"
                             title="Save"
                             onClick={onSaveNoteClicked}
                             disabled={!canSave}
                         >
-                            <FontAwesomeIcon icon={faSave} />
+                            <FontAwesomeIcon className={btnAdminClass} icon={faSave} />
                         </button>
                         {deleteButton}
                     </div>

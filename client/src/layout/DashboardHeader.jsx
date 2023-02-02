@@ -16,7 +16,7 @@ export default function DashboardHeader() {
   const navigate = useNavigate()
 
   // useAuth hook to check if manager, coach, client, or employee
-  const { isManager, isCoach, isAdmin } = useAuth()
+  const { isManager, isCoach, isAdmin, username } = useAuth()
 
   const [sendLogout, {
     isLoading,
@@ -104,6 +104,7 @@ export default function DashboardHeader() {
             </div>
           </div>
           <div className="ml-10 space-x-4">
+            <p className='p-2 inline text-sm text-gray-300 font-light font-mono tracking-tighter'>Logged in as: {username}</p>
             {!token && loginButton}
             {/* {logoutButton} */}
             <ProfileDashMenu logout={popOverData.logout} users={popOverData.users} />

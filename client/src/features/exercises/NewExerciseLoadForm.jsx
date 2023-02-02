@@ -10,9 +10,9 @@ import {useAddExerciseLoadMutation} from './exercisesApiSlice'
 const NewExerciseLoadForm = ({id, user}) => {
 
   const [addExerciseLoad, { isLoading, isError, isSuccess, error, data }] = useAddExerciseLoadMutation()
-  const [load, setLoad] = useState()
-  const [reps, setReps] = useState()
-  const [note, setNote] = useState()
+  const [load, setLoad] = useState(0)
+  const [reps, setReps] = useState(0)
+  const [note, setNote] = useState('')
 
   // addExerciseLoad inputs a load on an exercise linked to a user
   // needs users id, exercise id and load data.
@@ -22,7 +22,7 @@ const NewExerciseLoadForm = ({id, user}) => {
     await addExerciseLoad({ id, load, reps, user, note })
   }
 
-  let canSave = [id, load, user, reps].every(Boolean) && !isLoading && [load, reps].every(Number)
+  let canSave = [id, user, reps].every(Boolean) && !isLoading && [load, reps].every(Number)
 
   const navigate = useNavigate()
 

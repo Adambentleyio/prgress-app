@@ -10,7 +10,7 @@ const exercisesController = require('../controllers/exercisesController')
 router.route('/')
 .get(exercisesController.getAllExercises)
 .post(exercisesController.createNewExercise)
-// need to create an edit exercise controller
+.patch(exercisesController.updateUserExercise)
 .delete(exercisesController.deleteExercise)
 
 // @route /exercises/load
