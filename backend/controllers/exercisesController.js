@@ -1,6 +1,7 @@
 const Exercise = require('../models/Exercise')
 const User = require('../models/User')
 const mongoose = require('mongoose')
+const { aggregate } = require('../models/Note')
 
 
 // @Desc get all exercises
@@ -72,8 +73,22 @@ const createNewExercise = async (req, res) => {
     // Check for duplicate entry for user
     const duplicate = await Exercise.findOne({ name }).collation({locale: 'en', strength: 2}).lean().exec()
 
-    if (duplicate && duplicate.userById === userById) {
+    if (duplicate === userById) {
         return res.status(409).json({ message: 'Duplicate exercise title' })
+    }
+
+    // aggregate exercises for user
+    const exercisesForUser = await Exercise.aggregate([
+        {
+            $match: { userById: mongoose.Types.ObjectId(id)}
+        }
+    ])
+
+    const existingTrackedExercise = exercisesForUser.filter(exercise => exercise.name === name)
+    console.log(existingTrackedExercise)
+
+    if (existingTrackedExercise.length) {
+        return res.status(409).json({ message: 'You are already tracking this exercise' })
     }
 
     if (!userById) {

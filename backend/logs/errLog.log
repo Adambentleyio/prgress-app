@@ -409,3 +409,4 @@
 20230202	12:36:13	c59e75bd-8dfb-4be1-b3fd-27024154640f	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
 20230202	12:36:25	5c09e30a-07b7-4b02-a27e-80db8837c4c0	ReferenceError: exercisesWithoutUsers is not defined	GET	/exercises	http://127.0.0.1:5173
 20230202	13:00:42	1a9a29a4-3992-4343-ace5-9c1c9a4dde48	ReferenceError: uniqueExercises is not defined	GET	/exercises	http://127.0.0.1:5173
+20230203	12:03:15	09161016-e5db-4897-a4e6-194459641ef7	Error: Cannot set headers after they are sent to the client	POST	/exercises	http://127.0.0.1:5173
