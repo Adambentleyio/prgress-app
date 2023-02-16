@@ -65,7 +65,7 @@ export default function ExercisesList() {
 
 
             return (
-            <div className="px-4 sm:px-6 lg:px-8">
+            <div>
             <div className="sm:flex sm:items-end">
               <div className="sm:flex-auto">
                 <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Exercises</h1>

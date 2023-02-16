@@ -140,7 +140,7 @@ const addExerciseLoad = async (req, res) => {
 
     // Confirm data
     if (!id || !user || !load) {
-        return res.status(400).json({ message: 'All fields are required' })
+        return res.status(400).json({ message: `All fields are required: id: ${id} + user: ${user} + load: ${load} `  })
     }
 
     // Confirm note exists to update

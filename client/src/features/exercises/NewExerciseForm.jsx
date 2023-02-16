@@ -62,16 +62,15 @@ const NewExerciseForm = ({ users }) => {
     })
 
     return (
+      <>
+
+      <div className="sm:flex-auto">
+        <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Add Exercise</h1>
+        <p className="mt-2 text-gray-300 max-w-sm">Give it a name and a description.</p>
+      </div>
             <form className="space-y-8 divide-y divide-gray-200">
               <div className="space-y-8 divide-y divide-gray-200">
                 <div>
-                  <div>
-                    <h3 className="text-lg font-medium text-indigo-500">Add exercise</h3>
-                    <p className="mt-1 text-sm text-gray-300">
-                      This exercise will be available to track PR progress and maximum effort attempts in your dashboard.
-                    </p>
-                  </div>
-
                   <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                     <div className="sm:col-span-4">
                       <label htmlFor="username" className="block text-sm font-medium text-gray-50">
@@ -107,19 +106,19 @@ const NewExerciseForm = ({ users }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-indigo-500 inline-block items-start rounded-lg mt-8 py-4 px-6 space-x-2">
-                    <button
-                        className="inline"
-                        title="Save"
-                        onClick={onSaveNoteClicked} disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
-                        <p className='inline'>Save</p></div>
+                  <button
+                  className="bg-indigo-500 inline-block rounded-lg mt-8 py-4 px-6 space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Save"
+                  onClick={onSaveNoteClicked} disabled={!canSave}
+                  >
+                      <FontAwesomeIcon icon={faSave} />
+                    <p className='inline'>Save</p>
+                  </button>
                 </div>
                 </div>
 
             </form>
+            </>
           )
 }
 

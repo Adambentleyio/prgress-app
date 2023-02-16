@@ -44,6 +44,7 @@ function App() {
           <Route path="dash" element={<DashboardLayout/>}>
 
             <Route index element={<Welcome />}/>
+            {/* <Route index element={<ExercisesListFiltered />}/> */}
 
             <Route path="exercises">
               <Route index element={<ExerciseList />} />

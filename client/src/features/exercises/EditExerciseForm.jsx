@@ -95,13 +95,12 @@ const EditExerciseForm = ({ exercise, users }) => {
     const content = (
         <>
             <p className={errClass}>{errContent}</p>
-
-            <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
-                    <h2 className="text-lg font-bold text-indigo-600">{exercise.name}</h2>
-                </div>
-                <NewExerciseLoadForm id={exercise.id} user={exercise.userById} />
-                <label className="form__label" htmlFor="note-title">
+            <h2 className="text-lg font-bold text-indigo-600">{exercise.name}</h2>
+            {/* Load component here */}
+            <NewExerciseLoadForm id={exercise.id} user={exercise.userById} />
+            {/* Edit exercise information here */}
+            <form className="flex flex-col space-y-2" onSubmit={e => e.preventDefault()}>
+                <label className="mt-4" htmlFor="exercise-title">
                     Title:</label>
                 <input
                     className={`form__input ${validTitleClass} text-gray-900`}
@@ -113,12 +112,12 @@ const EditExerciseForm = ({ exercise, users }) => {
                     onChange={onTitleChanged}
                 />
 
-                <label className="form__label" htmlFor="note-text">
-                    Text:</label>
+                <label htmlFor="note-text">
+                    Description:</label>
                 <textarea
                     className={`form__input form__input--text ${validTextClass} text-gray-800`}
-                    id="note-text"
-                    name="text"
+                    id="exercise-description"
+                    name="description"
                     value={description}
                     onChange={onTextChanged}
                 />
@@ -174,7 +173,7 @@ const EditExerciseForm = ({ exercise, users }) => {
                             <FontAwesomeIcon className={btnAdminClass} icon={faSave} />
                         </button>
                         {deleteButton}
-                    </div>
+                </div>
             </form>
         </>
     )

@@ -71,6 +71,7 @@ const EditNoteForm = ({ note, users }) => {
         )
     })
 
+    const btnAdminClass = `h-8 transition-scale duration-50 ease-in hover:scale-90`
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
     const validTitleClass = !title ? "form__input--incomplete" : ''
     const validTextClass = !text ? "form__input--incomplete" : ''
@@ -86,7 +87,7 @@ const EditNoteForm = ({ note, users }) => {
                 title="Delete"
                 onClick={onDeleteNoteClicked}
             >
-                <FontAwesomeIcon icon={faTrashCan} />
+                <FontAwesomeIcon className={`${btnAdminClass}`} icon={faTrashCan} />
             </button>
         )
     }
@@ -98,22 +99,11 @@ const EditNoteForm = ({ note, users }) => {
             <form className="form" onSubmit={e => e.preventDefault()}>
                 <div className="form__title-row">
                     <h2>Edit Note #{note.ticket}</h2>
-                    <div className="form__action-buttons">
-                        <button
-                            className="icon-button"
-                            title="Save"
-                            onClick={onSaveNoteClicked}
-                            disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
-                        {deleteButton}
-                    </div>
                 </div>
                 <label className="form__label" htmlFor="note-title">
                     Title:</label>
                 <input
-                    className={`form__input ${validTitleClass}`}
+                    className={`form__input ${validTitleClass} text-gray-800`}
                     id="note-title"
                     name="title"
                     type="text"
@@ -125,7 +115,7 @@ const EditNoteForm = ({ note, users }) => {
                 <label className="form__label" htmlFor="note-text">
                     Text:</label>
                 <textarea
-                    className={`form__input form__input--text ${validTextClass}`}
+                    className={`form__input form__input--text ${validTextClass} text-gray-800`}
                     id="note-text"
                     name="text"
                     value={text}
@@ -150,7 +140,7 @@ const EditNoteForm = ({ note, users }) => {
                         <select
                             id="note-username"
                             name="username"
-                            className="form__select"
+                            className="form__select text-gray-800"
                             value={userId}
                             onChange={onUserIdChanged}
                         >
@@ -162,6 +152,17 @@ const EditNoteForm = ({ note, users }) => {
                         <p className="form__updated">Updated:<br />{updated}</p>
                     </div>
                 </div>
+                <div className="space-x-3">
+                        <button
+                            className="icon-button"
+                            title="Save"
+                            onClick={onSaveNoteClicked}
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon className={`${btnAdminClass}`} icon={faSave} />
+                        </button>
+                        {deleteButton}
+                    </div>
 
             </form>
         </>

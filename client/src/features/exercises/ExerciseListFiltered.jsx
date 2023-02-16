@@ -1,14 +1,47 @@
 import { useGetUsersExercisesQuery } from "./exercisesApiSlice"
-// import Exercise from './Exercise'
+import { useAddExerciseLoadMutation } from "./exercisesApiSlice";
 import useAuth from "../../hooks/useAuth";
 import { PulseLoader } from 'react-spinners';
 import { useNavigate } from "react-router-dom";
 import { useGetUsersQuery } from "../users/usersApiSlice";
+import Modal from "../../components/Modal";
+import { useEffect, useState } from "react";
 
 export default function ExercisesListFiltered() {
 
     const { username, isManager, isAdmin } = useAuth();
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalLoadData, setModalLoadData] = useState({
+      reps: '',
+      load: '',
+    });
+    const [loadData, setLoadData] = useState({});
+    const [addExerciseLoad, { isLoading: addLoadLoading, isError: addLoadIsError, isSuccess: addLoadIsSuccess, error: addLoadError, data }] = useAddExerciseLoadMutation();
+
+    const onAddExerciseLoadClicked = async (e) => {
+      e && e.preventDefault()
+      setLoadData({
+        ...loadData,
+        reps: modalLoadData.reps,
+        load: modalLoadData.load})
+
+      await addExerciseLoad({
+        id: loadData.id,
+        user: loadData.userById,
+        reps: modalLoadData.reps,
+        load: modalLoadData.load}),
+        setIsOpen(false)
+    }
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+
+      if (addLoadIsSuccess) {
+          navigate('/dash/exercises')
+      }
+
+  }, [addLoadIsSuccess, navigate])
 
     const { users } = useGetUsersQuery('usersList', {
       selectFromResult: ({ data }) => ({
@@ -26,13 +59,14 @@ export default function ExercisesListFiltered() {
         error
     } = useGetUsersExercisesQuery(id)
 
-
-//     { /*options for listening and then dispatching new queries to redux store */
-//     pollingInterval: 60000,
-//     refetchOnFocus: true,
-//     refetchOnMountOrArgChange: true
-// }
     const handleEdit = (id) => navigate(`/dash/exercises/${id}`)
+
+    const handleLoadModal = (entry) => {
+      let { id, name, userById, description } = entry
+      setIsOpen(true)
+      setLoadData({ id, name, userById, description})
+      console.log(loadData)
+    }
 
     let content
 
@@ -49,12 +83,24 @@ export default function ExercisesListFiltered() {
         const { ids, entities } = exercises
 
             return (
-            <div className="px-4 sm:px-6 lg:px-8">
+            <div>
+              {/* Modal goes here */}
+              <Modal
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              handleOnAddLoad={onAddExerciseLoadClicked}
+              modalLoadData={modalLoadData}
+              setModalLoadData={setModalLoadData}
+              loadData={loadData}
+              setLoadData={setLoadData}>
+
+              </Modal>
+              {/* End of modal */}
             <div className="sm:flex sm:items-end">
               <div className="sm:flex-auto">
               <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Your lifts</h1>
-                <p className="mt-2 text-sm text-gray-300">Add new attempts and personal records to your list of exercises by clicking edit.</p>
-                <p className="mt-2 text-sm text-gray-300 max-w-sm">Qucik load coming soon</p>
+                <p className="mt-2 font-semibold text-gray-100">Add new attempts and personal records to your list of exercises by clicking edit.</p>
+                <p className="mt-2 text-sm text-gray-300 max-w-sm">Quick load coming soon</p>
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <button
@@ -66,7 +112,7 @@ export default function ExercisesListFiltered() {
                 </button>
               </div>
             </div>
-            <div className="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
+            <div className="mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-300">
                 <thead className="">
                   <tr>
@@ -105,8 +151,11 @@ export default function ExercisesListFiltered() {
                       <td className="hidden px-3 py-4 text-sm text-gray-300 lg:table-cell">{entry.description}</td>
                       {/* // latest load */}
                       <td className="px-3 py-4 text-sm text-gray-300">{entry.loads.length? entry.loads[0].load : "-"}</td>
-                      <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <button onClick={() => handleEdit(entities[exerciseId].id)} className="text-indigo-600 hover:text-indigo-900">
+                      <td className="px-2 text-right text-sm sm:pr-6">
+                        <button className="text-indigo-600 hover:text-indigo-300" onClick={() => handleLoadModal(entry)}>Add</button>
+                      </td>
+                      <td className="px-2 text-right text-sm sm:pr-6">
+                      <button onClick={() => handleEdit(entities[exerciseId].id)} className="text-gray-500 hover:text-indigo-300">
                           Edit<span className="sr-only">, {entities[exerciseId].name}</span>
                         </button>
                       </td>
