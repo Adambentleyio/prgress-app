@@ -29,7 +29,7 @@ const useAuth = () => {
         if (isManager) status = "Manager"
         if (isAdmin) status = "Admin"
 
-        return { username, roles, status, isManager, isAdmin, isClient }
+        return { username, roles, status, isManager, isAdmin, isClient, token }
     }
 
     return { username: '', roles: [], isManager, isAdmin, status }

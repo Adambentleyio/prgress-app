@@ -1,13 +1,8 @@
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import { faUser} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSendLogoutMutation } from '../features/auth/authApiSlice'
-import { selectCurrentToken } from '../features/auth/authSlice'
-import { useSelector } from 'react-redux'
 import  useAuth  from '../hooks/useAuth'
-import Popover from '../components/dashPopover'
 import ProfileDashMenu from '../components/ProfileDashMenu'
 
 
@@ -16,7 +11,7 @@ export default function DashboardHeader() {
   const navigate = useNavigate()
 
   // useAuth hook to check if manager, coach, client, or employee
-  const { isManager, isCoach, isAdmin, username } = useAuth()
+  const { isManager, isCoach, isAdmin, username, token } = useAuth()
 
   const [sendLogout, {
     isLoading,
@@ -25,10 +20,9 @@ export default function DashboardHeader() {
     err
   }] = useSendLogoutMutation()
 
-  const token = useSelector(state => state.auth.token)
 
-    // check isSuccess and when TRUE navigate to '/'
-    useEffect(() => {
+  // check isSuccess and when TRUE navigate to '/'
+  useEffect(() => {
       if (isSuccess) navigate('/')
     }, [isSuccess, navigate])
 
@@ -62,6 +56,7 @@ export default function DashboardHeader() {
     )
   }
 
+  // An object of data to populate the Headless UI Popover
   const popOverData = {
     logout: {
       func: () => sendLogout(),
@@ -73,19 +68,11 @@ export default function DashboardHeader() {
   }
 }
 
-  const logoutButton = (
-    <Popover
-    logout={popOverData.logout}
-     users={popOverData.users}
-  />
-  )
-
   const loginButton = (
     <button className="icon-button">
       <Link to='/login'>Login</Link>
     </button>
   )
-
 
   return (
     <>
