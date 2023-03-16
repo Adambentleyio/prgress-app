@@ -105,11 +105,11 @@ export default function ExercisesList() {
                     const entry = entities[exerciseId]
                     return (
                     <tr key={entities[exerciseId].id}>
-                      <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-300 sm:w-auto sm:max-w-none sm:pl-6">
+                      <td className="max-w-0 min-w-[20ch] py-4 pl-4 pr-3 text-sm font-medium text-gray-300 sm:w-auto sm:max-w-none sm:pl-6">
                         {entities[exerciseId].name}
                         <dl className="font-normal lg:hidden">
                           <dt className="sr-only">Description</dt>
-                          <dd className="mt-1 truncate text-gray-400 text-xs">{entry.description}</dd>
+                          <dd className="mt-1 sm:hidden truncate text-gray-400 text-xs">{entry.description}</dd>
                           <dt className="sr-only sm:hidden">Email</dt>
                           {/* <dd className="mt-1 truncate text-gray-300 sm:hidden">{entities[exerciseId].id}</dd> */}
                         </dl>
@@ -119,7 +119,7 @@ export default function ExercisesList() {
                       <td className="px-3 py-4 text-sm text-gray-300">{entry.description}</td>
                       <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 space-y-2 md:space-x-2 md:space-y-0">
                         {isAdmin | isManager && (
-                          <button onClick={() => handleEdit(entities[exerciseId].id)} className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium text-white shadow-sm hover:cursor-pointer hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+                          <button  onClick={() => handleEdit(entities[exerciseId].id)} className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium text-white shadow-sm hover:cursor-pointer hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
                           Edit<span className="sr-only">, {entities[exerciseId].name}</span>
                         </button>
                         ) }

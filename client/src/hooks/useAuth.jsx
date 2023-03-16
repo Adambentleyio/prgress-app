@@ -25,7 +25,7 @@ const useAuth = () => {
         isClient = roles.includes('Client')
 
 
-
+        if (isClient) status = "Client"
         if (isManager) status = "Manager"
         if (isAdmin) status = "Admin"
 

@@ -435,3 +435,9 @@
 20230216	12:00:23	ec5f4ef0-d2b0-471d-bcb3-67d822acb553	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
 20230216	12:04:56	32a42011-854f-4d95-bf8a-5b31805c6521	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
 20230216	12:10:00	e6bd826c-959f-4a4c-8a74-bb3d8a8d19f5	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230216	13:59:56	640b6f61-67f3-4696-ad9c-c40e53afa03c	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230216	14:00:27	5728beb8-906e-4acb-ab1f-d41f457ea197	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230216	14:28:25	52c9326b-a6d5-4d17-bc89-58edf2b374c5	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230216	14:33:58	9943f33b-1126-4b34-a909-c4fdea2e32e3	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230216	14:37:48	e2491ac6-b447-4809-a80c-121a6cb1ceca	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173
+20230316	15:17:35	2b8e47ea-c997-4c85-a7b6-05f4afdea078	BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer	GET	/exercises/undefined	http://127.0.0.1:5173

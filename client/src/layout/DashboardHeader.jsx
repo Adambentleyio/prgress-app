@@ -40,7 +40,7 @@ export default function DashboardHeader() {
 
   let secondaryNav
 
-  if (isManager || isCoach || isAdmin) {
+  if (isManager || isCoach || isAdmin ) {
     secondaryNav = (
       <>
         <div className='flex space-x-2'>

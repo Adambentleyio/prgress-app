@@ -15,6 +15,8 @@ const getAllExercises = async (req, res) => {
         return res.status(400).json({message: "We can't find any exercises"})
     }
 
+    exercises.filter(exercise => exercise.userById === undefined)
+
     return res.json(exercises)
 
 
@@ -63,7 +65,7 @@ const createNewExercise = async (req, res) => {
     }
 
     // Confirm data of username by string and exercise name by string
-    if (!user || !name) {
+    if (!user | !name) {
         return res.status(400).json({ message: 'Make sure you are logged in and provide an exercise name' })
     }
 
@@ -73,7 +75,7 @@ const createNewExercise = async (req, res) => {
     // Check for duplicate entry for user
     const duplicate = await Exercise.findOne({ name }).collation({locale: 'en', strength: 2}).lean().exec()
 
-    if (duplicate === userById) {
+    if (duplicate & duplicate.userById === undefined) {
         return res.status(409).json({ message: 'Duplicate exercise title' })
     }
 

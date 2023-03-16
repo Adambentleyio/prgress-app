@@ -100,7 +100,6 @@ export default function ExercisesListFiltered() {
               <div className="sm:flex-auto">
               <h1 className="text-2xl font-extrabold inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Your lifts</h1>
                 <p className="mt-2 font-semibold text-gray-100">Add new attempts and personal records to your list of exercises by clicking edit.</p>
-                <p className="mt-2 text-sm text-gray-300 max-w-sm">Quick load coming soon</p>
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <button

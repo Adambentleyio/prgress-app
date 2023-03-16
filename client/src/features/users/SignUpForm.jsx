@@ -3,8 +3,7 @@ import { useAddNewUserMutation } from './usersApiSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { ROLES } from '../../config/roles';
 import { delay } from '../../config/delay';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSave } from '@fortawesome/free-solid-svg-icons';
+
 
 
 //TODOS
@@ -15,6 +14,7 @@ const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
 
 
 export default function SignUpForm() {
+
 
   const [addNewUser, {
     isLoading,
@@ -29,7 +29,8 @@ export default function SignUpForm() {
   const [validUsername, setValidUsername] = useState(false)
   const [password, setPassword] = useState('')
   const [validPassword, setValidPassword] = useState(false)
-  const [roles, setRoles] = useState(['Employee'])
+  const [roles, setRoles] = useState(['Client'])
+
 
   useEffect(() => {
 
@@ -112,7 +113,7 @@ return (
             <form className="space-y-6 " onSubmit={onSaveUserClicked}>
               <div>
                 <label htmlFor="username" className="block text-sm font-medium text-gray-300">
-                  Username
+                  Usernames
                 </label>
                 <div className="mt-1">
                   <input
@@ -122,7 +123,7 @@ return (
                     autoComplete="off"
                     value={username}
                     onChange={onUsernameChanged}
-                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full appearance-none rounded-md border text-gray-700 border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -139,7 +140,7 @@ return (
                     value={password}
                     onChange={onPasswordChanged}
                     required
-                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full appearance-none rounded-md border text-gray-700 border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
               </div>
